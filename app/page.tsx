@@ -8,10 +8,12 @@ type Product = {
   name: string;
   category: string;
   price: number;
-  oldPrice: number;
-  discount: number;
+  oldPrice?: number;
+  discount?: number;
   image: string;
   tag?: string;
+  description: string;
+  details: string[];
 };
 
 const categories = [
@@ -20,92 +22,261 @@ const categories = [
   { name: 'Rostro', icon: '☼', tone: 'sand' },
   { name: 'Cabello', icon: '〰', tone: 'green' },
   { name: 'Maquillaje', icon: '◐', tone: 'berry' },
-  { name: 'Regalos', icon: '⌑', tone: 'orange' },
+  { name: 'Infantil', icon: '⌑', tone: 'orange' },
 ];
 
 const products: Product[] = [
   {
     id: 1,
-    brand: 'Tododia',
-    name: 'Body splash Frambuesa y Pimienta Roja 200 ml',
-    category: 'Cuidados corporales',
-    price: 790,
-    oldPrice: 1190,
-    discount: 34,
-    tag: 'más vendido',
-    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw764b0c3e/18237_1.jpg',
+    brand: 'Kaiak',
+    name: 'Desodorante colonia Kaiak 21K masculino 100 ml',
+    category: 'Perfumería',
+    price: 1349,
+    oldPrice: 1899,
+    discount: 29,
+    tag: 'lanzamiento',
+    image: '/catalog/kaiak-21k.webp',
+    description: 'Frescor aromático con notas amaderadas y un toque vibrante de jengibre.',
+    details: ['Fragancia masculina de 100 ml', 'Frescor prolongado', 'Producto del catálogo Ciclo 14'],
   },
   {
     id: 2,
-    brand: 'Ekos',
-    name: 'Pulpa hidratante corporal Castaña 400 ml',
-    category: 'Cuidados corporales',
-    price: 990,
-    oldPrice: 1490,
-    discount: 34,
-    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwce8320c7/ProdutoJoia/desktop/80936.jpg',
+    brand: 'Tododia',
+    name: 'Body splash Frambuesa y Pimienta Rosa 200 ml',
+    category: 'Perfumería',
+    price: 969,
+    tag: 'más vendido',
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw764b0c3e/18237_1.jpg',
+    description: 'Fragancia frutal y especiada, liviana para reaplicar durante el día.',
+    details: ['Body splash de 200 ml', 'Ideal para uso diario', 'Válvula spray'],
   },
   {
     id: 3,
-    brand: 'Chronos Derma',
-    name: 'Protector aclarador FPS 50+ 50 ml',
-    category: 'Rostro',
-    price: 1290,
-    oldPrice: 1790,
-    discount: 28,
-    tag: 'nuevo',
-    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw4df526ef/ProdutoJoia/desktop/80059.jpg',
+    brand: 'Ekos',
+    name: 'Crema hidratante corporal Castaña 400 ml',
+    category: 'Cuidados corporales',
+    price: 899,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwce8320c7/ProdutoJoia/desktop/80936.jpg',
+    description: 'Nutrición intensa con el bioactivo de castaña para una piel suave y confortable.',
+    details: ['Hidratante corporal de 400 ml', 'Nutre la piel', 'Fórmula vegana'],
   },
   {
     id: 4,
-    brand: 'Tododia',
-    name: 'Crema nutritiva Mora y Flor de Durazno 400 ml',
-    category: 'Cuidados corporales',
-    price: 690,
-    oldPrice: 990,
-    discount: 30,
-    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw3d96a449/ProdutoJoia/desktop/181896.jpg',
+    brand: 'Chronos Derma',
+    name: 'Multiprotector aclarador FPS 70 / FPUVA 50 ml',
+    category: 'Rostro',
+    price: 1250,
+    tag: 'protección diaria',
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw4df526ef/ProdutoJoia/desktop/80059.jpg',
+    description: 'Alta protección solar facial que ayuda a prevenir y aclarar manchas solares.',
+    details: ['Protección facial de 50 ml', 'FPS 70 y FPUVA', 'Uso diario'],
   },
   {
     id: 5,
     brand: 'Homem',
-    name: 'Eau de Parfum Homem Essence 25 ml',
+    name: 'Deo parfum Homem Essence 100 ml',
     category: 'Perfumería',
-    price: 1190,
-    oldPrice: 1690,
-    discount: 30,
-    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwfc05921e/ProdutoJoia/desktop/89185.jpg',
+    price: 2449,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw1e53262d/ProdutoJoia/desktop/59848.jpg',
+    description: 'Fragancia amaderada, ambarada y especiada de intensidad alta.',
+    details: ['Deo parfum masculino de 100 ml', 'Notas amaderadas y especiadas', 'Ideal para ocasiones especiales'],
   },
   {
     id: 6,
     brand: 'Kaiak',
-    name: 'Eau de Toilette Masculino Urbe 100 ml',
+    name: 'Desodorante colonia Kaiak Urbe masculino 100 ml',
     category: 'Perfumería',
-    price: 1890,
-    oldPrice: 2690,
-    discount: 30,
+    price: 1899,
     tag: 'favorito',
     image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw3b022f77/ProdutoJoia/desktop/111172.jpg',
+    description: 'Fragancia aromática especiada para quienes prefieren un frescor urbano.',
+    details: ['Fragancia masculina de 100 ml', 'Perfil aromático especiado', 'Uso diario'],
   },
   {
     id: 7,
     brand: 'Homem',
-    name: 'Eau de Parfum Cor.Agio 100 ml',
+    name: 'Deo parfum Homem Cor.Agio 100 ml',
     category: 'Perfumería',
-    price: 2890,
-    oldPrice: 3690,
-    discount: 22,
+    price: 2299,
+    oldPrice: 3299,
+    discount: 30,
     image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwe26eb8ef/ProdutoJoia/desktop/186.jpg',
+    description: 'Notas amaderadas intensas, especias frías, copaíba y cumarú.',
+    details: ['Deo parfum masculino de 100 ml', 'Alta intensidad', 'Fragancia vegana'],
   },
   {
     id: 8,
     brand: 'Kriska',
-    name: 'Eau de Toilette Shock Femenino 100 ml',
+    name: 'Desodorante colonia Kriska Shock femenino 100 ml',
     category: 'Perfumería',
-    price: 1590,
-    oldPrice: 2190,
-    discount: 27,
+    price: 1699,
     image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw6ac8b0d7/ProdutoJoia/desktop/83323.jpg',
+    description: 'Fragancia femenina dulce de intensidad moderada.',
+    details: ['Desodorante colonia de 100 ml', 'Perfil dulce', 'Intensidad moderada'],
+  },
+  {
+    id: 9,
+    brand: 'Homem',
+    name: 'Deo parfum Homem Tato 100 ml',
+    category: 'Perfumería',
+    price: 2449,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw25d5f3be/ProdutoJoia/desktop/109164.jpg',
+    description: 'Amaderado especiado y ambarado con una firma intensa y envolvente.',
+    details: ['Deo parfum masculino de 100 ml', 'Notas de pimienta, cardamomo y sándalo', 'Producto vegano'],
+  },
+  {
+    id: 10,
+    brand: 'Ilía',
+    name: 'Deo parfum Ilía Secreto femenino 50 ml',
+    category: 'Perfumería',
+    price: 1999,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwa88cdd3f/ProdutoJoia/desktop/83322.jpg',
+    description: 'Fragancia floral intensa, envolvente y femenina.',
+    details: ['Deo parfum femenino de 50 ml', 'Perfil floral intenso', 'Perfume de larga duración'],
+  },
+  {
+    id: 11,
+    brand: 'Luna',
+    name: 'Deo parfum Luna Intensa femenino 50 ml',
+    category: 'Perfumería',
+    price: 2199,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw3ffdaee1/ProdutoJoia/desktop/90927.jpg',
+    description: 'Chipre amaderado intenso con una presencia cálida y envolvente.',
+    details: ['Deo parfum femenino de 50 ml', 'Alta intensidad', 'Ideal para la noche'],
+  },
+  {
+    id: 12,
+    brand: 'Chronos Derma',
+    name: 'Sérum intensivo multiaclarador 30 ml',
+    category: 'Rostro',
+    price: 2050,
+    tag: 'tratamiento',
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw80321cf0/ProdutoJoia/desktop/169222.jpg',
+    description: 'Tratamiento que ayuda a uniformar el tono y reducir distintos tipos de manchas.',
+    details: ['Sérum facial de 30 ml', 'Para todos los tipos y tonos de piel', 'Uso de mañana y noche'],
+  },
+  {
+    id: 13,
+    brand: 'Chronos Derma',
+    name: 'Hidratante Acqua renovador 40 g',
+    category: 'Rostro',
+    price: 1790,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw96a34088/ProdutoJoia/desktop/91849.jpg',
+    description: 'Hidratación intensa de textura ligera y rápida absorción.',
+    details: ['Hidratante facial de 40 g', 'Hasta 24 horas de hidratación', 'Para todo tipo de piel'],
+  },
+  {
+    id: 14,
+    brand: 'Lumina',
+    name: 'Shampoo nutrición y reparación profunda 300 ml',
+    category: 'Cabello',
+    price: 539,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwc1cefd1d/ProdutoJoia/desktop/147411.jpg',
+    description: 'Limpieza nutritiva para cabello seco o reseco.',
+    details: ['Shampoo de 300 ml', 'Nutrición y reparación profunda', 'Fórmula vegana'],
+  },
+  {
+    id: 15,
+    brand: 'Una',
+    name: 'Máscara alargamiento infinito a prueba de agua 8 ml',
+    category: 'Maquillaje',
+    price: 899,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw1bbb2c18/ProdutoJoia/desktop/106122.jpg',
+    description: 'Fórmula ultraligera resistente al agua que alarga sin formar grumos.',
+    details: ['Máscara de pestañas de 8 ml', 'A prueba de agua', 'Apta para lentes de contacto'],
+  },
+  {
+    id: 16,
+    brand: 'Mamá y Bebé',
+    name: 'Agua de colonia sin alcohol 100 ml',
+    category: 'Infantil',
+    price: 1069,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw546f90e6/ProdutoJoia/desktop/92786.jpg',
+    description: 'Fragancia suave y delicada, sin alcohol, pensada para la piel sensible del bebé.',
+    details: ['Colonia infantil de 100 ml', 'Sin alcohol', 'Fórmula hipoalergénica'],
+  },
+  {
+    id: 17,
+    brand: 'Mamá y Bebé',
+    name: 'Jabón líquido de la cabeza a los pies 200 ml',
+    category: 'Infantil',
+    price: 529,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw95e4933e/ProdutoJoia/desktop/92800.jpg',
+    description: 'Limpieza suave para cabello y cuerpo desde el primer baño.',
+    details: ['Jabón líquido de 200 ml', 'No irrita los ojos', '98% de ingredientes naturales'],
+  },
+  {
+    id: 18,
+    brand: 'Tododia',
+    name: 'Body splash Cereza y Avellana 200 ml',
+    category: 'Perfumería',
+    price: 969,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwbdc8baeb/95841_1.jpg',
+    description: 'Fragancia dulce y confortable para perfumarte todos los días.',
+    details: ['Body splash de 200 ml', 'Uso diario', 'Válvula spray'],
+  },
+  {
+    id: 19,
+    brand: 'Tododia',
+    name: 'Manteca corporal Cereza y Avellana 200 ml',
+    category: 'Cuidados corporales',
+    price: 849,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw93b8856b/174612_1.jpg',
+    description: 'Textura cremosa que nutre y perfuma la piel.',
+    details: ['Hidratante corporal de 200 ml', 'Nutrición intensa', 'Para todo tipo de piel'],
+  },
+  {
+    id: 20,
+    brand: 'Tododia',
+    name: 'Body splash Mora Roja y Jabuticaba 200 ml',
+    category: 'Perfumería',
+    price: 969,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwb5625293/ProdutoJoia/desktop/88075.jpg',
+    description: 'Fragancia frutal, vibrante y liviana para acompañarte durante el día.',
+    details: ['Body splash de 200 ml', 'Perfil frutal', 'Válvula spray'],
+  },
+  {
+    id: 21,
+    brand: 'Tododia',
+    name: 'Body splash Ciruela y Flor de Vainilla 200 ml',
+    category: 'Perfumería',
+    price: 675,
+    oldPrice: 969,
+    discount: 30,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw60647b82/ProdutoJoia/desktop/100679.jpg',
+    description: 'Una combinación frutal y floral con fondo suavemente dulce.',
+    details: ['Body splash de 200 ml', 'Edición de últimos ciclos', 'Válvula spray'],
+  },
+  {
+    id: 22,
+    brand: 'Ekos',
+    name: 'Crema hidratante corporal Cupuaçu 400 ml',
+    category: 'Cuidados corporales',
+    price: 899,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw675f4b62/ProdutoJoia/desktop/203478.jpg',
+    description: 'Hidratación reafirmante con cupuaçu para mejorar la firmeza y elasticidad.',
+    details: ['Hidratante corporal de 400 ml', 'Toque seco y rápida absorción', 'Hasta 72 horas de hidratación'],
+  },
+  {
+    id: 23,
+    brand: 'Ekos',
+    name: 'Repuesto crema hidratante corporal Cupuaçu 400 ml',
+    category: 'Cuidados corporales',
+    price: 699,
+    tag: 'repuesto',
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dw26c84d4e/ProdutoJoia/desktop/205946.jpg',
+    description: 'La misma hidratación reafirmante en una opción más económica y con menos envase.',
+    details: ['Repuesto de 400 ml', 'Hasta 72 horas de hidratación', 'Opción más sustentable'],
+  },
+  {
+    id: 24,
+    brand: 'Ekos',
+    name: 'Frescor Cupuaçu eau de toilette 150 ml',
+    category: 'Perfumería',
+    price: 1299,
+    image: 'https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-ar-storefront-catalog/default/dwa20d6341/ProdutoJoia/desktop/199394.jpg',
+    description: 'Fragancia fresca inspirada en el aroma cremoso y envolvente del cupuaçu.',
+    details: ['Eau de toilette de 150 ml', 'Fragancia ligera y refrescante', 'Línea Ekos'],
   },
 ];
 
@@ -121,6 +292,7 @@ export default function Home() {
   const [cart, setCart] = useState<Record<number, number>>({});
   const [favorites, setFavorites] = useState<number[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [notice, setNotice] = useState('');
 
@@ -163,12 +335,20 @@ export default function Home() {
     window.setTimeout(() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }), 20);
   }
 
+  async function copyOrder() {
+    const lines = cartItems.map((product) => `${cart[product.id]} × ${product.brand} ${product.name} — ${currency.format(product.price * cart[product.id])}`);
+    const order = `Pedido Natura Uruguay\n${lines.join('\n')}\nTotal: ${currency.format(cartTotal)}`;
+    await navigator.clipboard.writeText(order);
+    setNotice('Pedido copiado. Ya podés enviarlo por mensaje.');
+    window.setTimeout(() => setNotice(''), 3000);
+  }
+
   return (
     <main>
       <div className="top-strip">
-        <span>Envíos a todo Uruguay</span>
-        <span>6 cuotas sin recargo</span>
-        <span>Cambios fáciles</span>
+        <span>Entrega en 24 h en Maldonado y Punta del Este</span>
+        <span>Precios en pesos uruguayos</span>
+        <span>Stock sujeto a confirmación</span>
       </div>
 
       <header className="site-header">
@@ -188,8 +368,8 @@ export default function Home() {
       </header>
 
       <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Categorías de productos">
-        {['promociones', 'kits', 'perfumería', 'cuidados corporales', 'repuestos', 'cabello', 'rostro', 'maquillaje', 'hombres', 'infantil', 'marcas'].map((item) => (
-          <button key={item} onClick={() => chooseCategory(item === 'perfumería' ? 'Perfumería' : item === 'cuidados corporales' ? 'Cuidados corporales' : item === 'rostro' ? 'Rostro' : 'Todos')}>{item}</button>
+        {['todos', 'perfumería', 'cuidados corporales', 'cabello', 'rostro', 'maquillaje', 'infantil'].map((item) => (
+          <button key={item} onClick={() => chooseCategory(item === 'perfumería' ? 'Perfumería' : item === 'cuidados corporales' ? 'Cuidados corporales' : item === 'cabello' ? 'Cabello' : item === 'rostro' ? 'Rostro' : item === 'maquillaje' ? 'Maquillaje' : item === 'infantil' ? 'Infantil' : 'Todos')}>{item}</button>
         ))}
       </nav>
 
@@ -197,19 +377,19 @@ export default function Home() {
         <img src="https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-NatArgentina-Library/default/dwf015c967/00_HOMES/09_2026/31_a_06/HERO/FLASHSALE1/FLASHSALE1_BHERO_DESK.jpg?q=80" alt="Selección de productos Natura en promoción" />
         <div className="hero-scrim" />
         <div className="hero-copy">
-          <p>semana natura</p>
-          <h1>Todo lo que te hace bien,<br /><em>ahora más cerca.</em></h1>
-          <span>Hasta 40% off en favoritos seleccionados</span>
-          <button onClick={() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' })}>ver promociones</button>
+          <p>catálogo natura · ciclo 14</p>
+          <h1>Tus favoritos Natura,<br /><em>ahora más cerca.</em></h1>
+          <span>Entrega en 24 horas en Maldonado y Punta del Este</span>
+          <button onClick={() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' })}>ver catálogo</button>
         </div>
         <div className="hero-dots" aria-hidden="true"><i className="active" /><i /><i /></div>
       </section>
 
       <section className="benefits" aria-label="Beneficios de compra">
-        <article><Icon>◇</Icon><div><strong>Envío gratis</strong><span>en compras desde $ 2.500</span></div></article>
-        <article><Icon>◎</Icon><div><strong>Pagá como quieras</strong><span>tarjetas, transferencia o efectivo</span></div></article>
-        <article><Icon>♲</Icon><div><strong>Compra consciente</strong><span>productos veganos y repuestos</span></div></article>
-        <article><Icon>⌂</Icon><div><strong>Estamos cerca</strong><span>entregas en todo el país</span></div></article>
+        <article><Icon>◇</Icon><div><strong>Entrega en 24 horas</strong><span>Maldonado y Punta del Este</span></div></article>
+        <article><Icon>◎</Icon><div><strong>Precios claros</strong><span>expresados en pesos uruguayos</span></div></article>
+        <article><Icon>♲</Icon><div><strong>Opciones conscientes</strong><span>fórmulas veganas y repuestos</span></div></article>
+        <article><Icon>⌂</Icon><div><strong>Atención cercana</strong><span>confirmamos disponibilidad al pedir</span></div></article>
       </section>
 
       <section className="category-section section-shell">
@@ -229,7 +409,7 @@ export default function Home() {
         <div className="section-heading products-heading">
           <div><p>elegidos para vos</p><h2>{query ? `Resultados para “${query}”` : 'Imperdibles de la semana'}</h2></div>
           <div className="filter-pills" aria-label="Filtrar productos">
-            {['Todos', 'Perfumería', 'Cuidados corporales', 'Rostro'].map((category) => <button key={category} className={selectedCategory === category ? 'active' : ''} onClick={() => setSelectedCategory(category)}>{category === 'Cuidados corporales' ? 'Cuerpo' : category}</button>)}
+            {['Todos', 'Perfumería', 'Cuidados corporales', 'Rostro', 'Cabello', 'Maquillaje', 'Infantil'].map((category) => <button key={category} className={selectedCategory === category ? 'active' : ''} onClick={() => setSelectedCategory(category)}>{category === 'Cuidados corporales' ? 'Cuerpo' : category}</button>)}
           </div>
         </div>
 
@@ -239,23 +419,23 @@ export default function Home() {
               <article className="product-card" key={product.id}>
                 <div className="product-image">
                   {product.tag && <span className="product-tag">{product.tag}</span>}
-                  <span className="discount">-{product.discount}%</span>
+                  {!!product.discount && <span className="discount">-{product.discount}%</span>}
                   <button className={`heart ${favorites.includes(product.id) ? 'saved' : ''}`} aria-label={favorites.includes(product.id) ? 'Quitar de favoritos' : 'Guardar en favoritos'} onClick={() => setFavorites((current) => current.includes(product.id) ? current.filter((id) => id !== product.id) : [...current, product.id])}>{favorites.includes(product.id) ? '♥' : '♡'}</button>
                   <img src={product.image} alt={product.name} loading="lazy" />
                 </div>
                 <div className="product-info">
                   <span className="product-brand">{product.brand}</span>
                   <h3>{product.name}</h3>
-                  <div className="rating" aria-label="Calificación 4.8 de 5">★★★★★ <span>4.8</span></div>
-                  <div className="price"><del>{currency.format(product.oldPrice)}</del><strong>{currency.format(product.price)}</strong></div>
-                  <small className="installments">6 cuotas de {currency.format(Math.ceil(product.price / 6))}</small>
+                  <p className="product-description">{product.description}</p>
+                  <div className="price">{product.oldPrice && <del>{currency.format(product.oldPrice)}</del>}<strong>{currency.format(product.price)}</strong></div>
+                  <button className="details-button" onClick={() => setSelectedProduct(product)}>ver detalles</button>
                   <button className="add-button" onClick={() => addToCart(product)}>agregar a mi bolsa</button>
                 </div>
               </article>
             ))}
           </div>
         ) : <div className="empty-state"><span>⌕</span><h3>No encontramos productos</h3><p>Probá con otra búsqueda o mirá todas las categorías.</p><button onClick={() => { setQuery(''); setSelectedCategory('Todos'); }}>ver todos</button></div>}
-        <p className="demo-prices">Precios de referencia expresados en pesos uruguayos. Catálogo demostrativo sujeto a confirmación de stock y precio.</p>
+        <p className="demo-prices">Precios en pesos uruguayos calculados a partir del catálogo brasileño (precio en reales × 10). Stock y precio final sujetos a confirmación.</p>
       </section>
 
       <section className="story-banner section-shell">
@@ -263,12 +443,9 @@ export default function Home() {
         <div className="story-copy"><p>belleza que regenera</p><h2>Cuando cuidás de vos,<br />también cuidás del mundo.</h2><span>Fórmulas veganas, activos de la biodiversidad y envases con menos plástico.</span><button onClick={() => chooseCategory('Cuidados corporales')}>conocer ekos</button></div>
       </section>
 
-      <section className="newsletter">
-        <div><p>quedate cerca</p><h2>Recibí novedades y beneficios</h2><span>Promociones, lanzamientos y rituales de bienestar directo en tu mail.</span></div>
-        <form onSubmit={(event) => { event.preventDefault(); setNotice('¡Gracias! Ya sos parte de la comunidad.'); window.setTimeout(() => setNotice(''), 2500); }}>
-          <label><span>Tu email</span><input required type="email" placeholder="hola@ejemplo.com" /></label>
-          <button>quiero recibir novedades</button>
-        </form>
+      <section className="newsletter service-callout">
+        <div><p>compra simple</p><h2>Armá tu bolsa y copiá el pedido</h2><span>Confirmamos disponibilidad y coordinamos la entrega en Maldonado o Punta del Este.</span></div>
+        <button onClick={() => setCartOpen(true)}>ver mi bolsa ({cartCount})</button>
       </section>
 
       <footer>
@@ -276,8 +453,8 @@ export default function Home() {
         <div><strong>comprá</strong><a href="#productos">Promociones</a><a href="#productos">Perfumería</a><a href="#productos">Cuidado personal</a><a href="#productos">Regalos</a></div>
         <div><strong>ayuda</strong><a href="#inicio">Preguntas frecuentes</a><a href="#inicio">Envíos y entregas</a><a href="#inicio">Cambios y devoluciones</a><a href="#inicio">Contacto</a></div>
         <div><strong>natura uruguay</strong><a href="#inicio">Sobre Natura</a><a href="#inicio">Sustentabilidad</a><a href="#inicio">Quiero vender</a><a href="#inicio">Encontrá una consultora</a></div>
-        <div className="country"><span>Uruguay · UYU</span><small>Montevideo y todo el país</small></div>
-        <p className="legal">Propuesta digital de tienda para Uruguay. Natura y sus líneas de producto son marcas de sus respectivos titulares.</p>
+        <div className="country"><span>Uruguay · UYU</span><small>Maldonado y Punta del Este</small></div>
+        <p className="legal">Tienda independiente. Natura y sus líneas de producto son marcas de sus respectivos titulares. Disponibilidad sujeta a confirmación.</p>
       </footer>
 
       {notice && <div className="toast" role="status">✓ {notice}</div>}
@@ -290,12 +467,29 @@ export default function Home() {
               <div className="cart-list">
                 {cartItems.map((product) => <article key={product.id}><img src={product.image} alt="" /><div><span>{product.brand}</span><h3>{product.name}</h3><strong>{currency.format(product.price)}</strong><div className="quantity"><button aria-label="Quitar uno" onClick={() => changeQuantity(product.id, -1)}>−</button><b>{cart[product.id]}</b><button aria-label="Agregar uno" onClick={() => changeQuantity(product.id, 1)}>+</button></div></div></article>)}
               </div>
-              <div className="shipping-progress"><div><span>{cartTotal >= 2500 ? '¡Tenés envío gratis!' : `Te faltan ${currency.format(2500 - cartTotal)} para envío gratis`}</span><b>{Math.min(100, cartTotal / 25)}%</b></div><i><em style={{ width: `${Math.min(100, cartTotal / 25)}%` }} /></i></div>
               <div className="cart-total"><span>Subtotal</span><strong>{currency.format(cartTotal)}</strong></div>
-              <button className="checkout" onClick={() => setNotice('El checkout se conectará al medio de pago de tu tienda.')}>continuar compra</button>
-              <small className="checkout-note">Impuestos incluidos · Checkout de demostración</small>
+              <button className="checkout" onClick={copyOrder}>copiar pedido</button>
+              <small className="checkout-note">La disponibilidad y la entrega se confirman al recibir tu consulta.</small>
             </> : <div className="empty-cart"><span>♧</span><h3>Tu bolsa está vacía</h3><p>Descubrí los favoritos de esta semana.</p><button onClick={() => setCartOpen(false)}>seguir comprando</button></div>}
           </aside>
+        </div>
+      )}
+
+      {selectedProduct && (
+        <div className="drawer-layer product-modal-layer" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedProduct(null); }}>
+          <section className="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-detail-title">
+            <button className="modal-close" aria-label="Cerrar detalle" onClick={() => setSelectedProduct(null)}>×</button>
+            <div className="modal-image"><img src={selectedProduct.image} alt={selectedProduct.name} /></div>
+            <div className="modal-copy">
+              <span>{selectedProduct.brand}</span>
+              <h2 id="product-detail-title">{selectedProduct.name}</h2>
+              <p>{selectedProduct.description}</p>
+              <ul>{selectedProduct.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
+              <div className="modal-price">{selectedProduct.oldPrice && <del>{currency.format(selectedProduct.oldPrice)}</del>}<strong>{currency.format(selectedProduct.price)}</strong></div>
+              <small>Precio en pesos uruguayos · Stock sujeto a confirmación</small>
+              <button className="checkout" onClick={() => { addToCart(selectedProduct); setSelectedProduct(null); }}>agregar a mi bolsa</button>
+            </div>
+          </section>
         </div>
       )}
     </main>
