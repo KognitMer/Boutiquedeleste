@@ -345,6 +345,13 @@ export default function Home() {
     window.setTimeout(() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }), 20);
   }
 
+  function showEkosProducts() {
+    setQuery('Ekos');
+    setSelectedCategory('Todos');
+    setPage(1);
+    window.setTimeout(() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }), 20);
+  }
+
   async function copyOrder() {
     const lines = cartItems.map((product) => `${cart[product.id]} × ${product.brand} ${product.name} — ${currency.format(product.price * cart[product.id])}`);
     const order = `Pedido Natura Uruguay\n${lines.join('\n')}\nTotal: ${currency.format(cartTotal)}`;
@@ -464,7 +471,21 @@ export default function Home() {
 
       <section className="story-banner section-shell">
         <div className="story-art"><span>amazonia viva</span><b>Ekos</b></div>
-        <div className="story-copy"><p>belleza que regenera</p><h2>Cuando cuidás de vos,<br />también cuidás del mundo.</h2><span>Fórmulas veganas, activos de la biodiversidad y envases con menos plástico.</span><a href="https://www.naturacosmeticos.com.ar/c/ekos?srsltid=AfmBOoqWVTNWvndSiRLWwEwkMnZPBQg_g2kwPDRD4tJdeEUHBmOfU09T" target="_blank" rel="noreferrer">conocer ekos</a></div>
+        <div className="story-copy"><p>belleza que regenera</p><h2>Cuando cuidás de vos,<br />también cuidás del mundo.</h2><span>Fórmulas veganas, activos de la biodiversidad y envases con menos plástico.</span><a href="#ekos-info">conocer ekos</a></div>
+      </section>
+
+      <section id="ekos-info" className="ekos-info section-shell" aria-labelledby="ekos-title">
+        <div className="ekos-intro">
+          <p>Natura Ekos</p>
+          <h2 id="ekos-title">La potencia de la Amazonía en tu rutina de cuidado</h2>
+          <span>Ekos reúne productos para el cuerpo y el cabello elaborados con bioactivos de la biodiversidad amazónica. Cada línea aprovecha las propiedades de ingredientes como castaña, maracuyá, açaí, andiroba, cupuaçu, tukumá y murumuru.</span>
+        </div>
+        <div className="ekos-benefits">
+          <article><b>01</b><h3>Cuidado para la piel</h3><p>Opciones que ayudan a hidratar, nutrir, perfumar y recuperar la sensación de suavidad.</p></article>
+          <article><b>02</b><h3>Tratamiento para el cabello</h3><p>Líneas pensadas para nutrir, fortalecer, reparar y acompañar distintas necesidades capilares.</p></article>
+          <article><b>03</b><h3>Repuestos y consumo consciente</h3><p>Muchos productos cuentan con repuesto, una alternativa que utiliza menos envase y permite continuar la rutina.</p></article>
+        </div>
+        <button onClick={showEkosProducts}>ver productos Ekos del catálogo</button>
       </section>
 
       <section className="newsletter service-callout">
