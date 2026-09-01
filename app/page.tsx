@@ -373,8 +373,8 @@ export default function Home() {
         ))}
       </nav>
 
-      <section id="inicio" className="hero" aria-label="Promoción principal">
-        <img src="https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-NatArgentina-Library/default/dwf015c967/00_HOMES/09_2026/31_a_06/HERO/FLASHSALE1/FLASHSALE1_BHERO_DESK.jpg?q=80" alt="Selección de productos Natura en promoción" />
+      <section id="inicio" className="hero catalog-hero" aria-label="Catálogo actual Natura">
+        <img src="/catalog/kaiak-21k.webp" alt="Natura Kaiak 21K, lanzamiento del catálogo Ciclo 14" />
         <div className="hero-scrim" />
         <div className="hero-copy">
           <p>catálogo natura · ciclo 14</p>
