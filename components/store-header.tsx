@@ -6,10 +6,12 @@ import { useStore } from '@/components/store-provider';
 const navItems = [
   ['promociones', '/#productos'],
   ['perfumería', '/categoria/perfumeria'],
-  ['cuidados corporales', '/categoria/cuidados-corporales'],
+  ['cuerpo y baño', '/categoria/cuerpo-y-bano'],
   ['cabello', '/categoria/cabello'],
   ['rostro', '/categoria/rostro'],
   ['maquillaje', '/categoria/maquillaje'],
+  ['infantil', '/categoria/infantil'],
+  ['hogar', '/categoria/hogar'],
   ['regalos', '/categoria/regalos'],
 ];
 
@@ -29,7 +31,7 @@ export function StoreHeader() {
   }
 
   return <>
-    <div className="top-strip"><span>Envíos a todo Uruguay</span><span>6 cuotas sin recargo</span><span>Cambios fáciles</span></div>
+    <div className="top-strip"><span>Entrega en 24 h en Maldonado y Punta del Este</span><span>Precios en pesos uruguayos</span><span>Stock sujeto a confirmación</span></div>
     <header className="site-header">
       <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>☰</button>
       <a className="wordmark" href="/" aria-label="Natura Uruguay, inicio">natura<small>uruguay</small></a>
