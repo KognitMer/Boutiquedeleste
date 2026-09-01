@@ -29,7 +29,7 @@ const categories = [
   { name: 'Regalos', icon: '◇', tone: 'peach' },
 ];
 
-const seedProducts: Product[] = [
+const seedProducts: Omit<Product, 'sku'>[] = [
   {
     id: 1,
     brand: 'Kaiak',
