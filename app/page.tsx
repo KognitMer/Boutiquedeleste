@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useMemo, useState } from 'react';
+import { products as catalogProducts } from './catalog-data';
 
 type Product = {
   id: number;
@@ -18,14 +19,16 @@ type Product = {
 
 const categories = [
   { name: 'Perfumería', icon: '✦', tone: 'peach' },
-  { name: 'Cuidados corporales', icon: '◌', tone: 'rose' },
+  { name: 'Cuerpo y baño', icon: '◌', tone: 'rose' },
   { name: 'Rostro', icon: '☼', tone: 'sand' },
   { name: 'Cabello', icon: '〰', tone: 'green' },
   { name: 'Maquillaje', icon: '◐', tone: 'berry' },
   { name: 'Infantil', icon: '⌑', tone: 'orange' },
+  { name: 'Hogar', icon: '⌂', tone: 'green' },
+  { name: 'Regalos', icon: '◇', tone: 'peach' },
 ];
 
-const products: Product[] = [
+const seedProducts: Product[] = [
   {
     id: 1,
     brand: 'Kaiak',
@@ -280,6 +283,9 @@ const products: Product[] = [
   },
 ];
 
+const products = catalogProducts;
+const PAGE_SIZE = 24;
+
 const currency = new Intl.NumberFormat('es-UY', { style: 'currency', currency: 'UYU', maximumFractionDigits: 0 });
 
 function Icon({ children }: { children: React.ReactNode }) {
@@ -295,6 +301,7 @@ export default function Home() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [notice, setNotice] = useState('');
+  const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
     const text = query.trim().toLocaleLowerCase('es');
@@ -304,6 +311,8 @@ export default function Home() {
       return categoryMatch && textMatch;
     });
   }, [query, selectedCategory]);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const visibleProducts = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const cartItems = products.filter((product) => cart[product.id]);
   const cartCount = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
@@ -331,6 +340,7 @@ export default function Home() {
 
   function chooseCategory(category: string) {
     setSelectedCategory(category);
+    setPage(1);
     setMenuOpen(false);
     window.setTimeout(() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }), 20);
   }
@@ -355,7 +365,7 @@ export default function Home() {
         <button className="mobile-menu" aria-label="Abrir menú" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         <a className="wordmark" href="#inicio" aria-label="Natura Uruguay, inicio">natura<small>uruguay</small></a>
         <form className="search" onSubmit={submitSearch} role="search">
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="¿qué estás buscando hoy?" aria-label="Buscar productos" />
+          <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="¿qué estás buscando hoy?" aria-label="Buscar productos" />
           <button aria-label="Buscar"><Icon>⌕</Icon></button>
         </form>
         <div className="account-actions">
@@ -368,8 +378,8 @@ export default function Home() {
       </header>
 
       <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Categorías de productos">
-        {['todos', 'perfumería', 'cuidados corporales', 'cabello', 'rostro', 'maquillaje', 'infantil'].map((item) => (
-          <button key={item} onClick={() => chooseCategory(item === 'perfumería' ? 'Perfumería' : item === 'cuidados corporales' ? 'Cuidados corporales' : item === 'cabello' ? 'Cabello' : item === 'rostro' ? 'Rostro' : item === 'maquillaje' ? 'Maquillaje' : item === 'infantil' ? 'Infantil' : 'Todos')}>{item}</button>
+        {['Todos', ...categories.map((category) => category.name)].map((item) => (
+          <button key={item} onClick={() => chooseCategory(item)}>{item.toLocaleLowerCase('es')}</button>
         ))}
       </nav>
 
@@ -407,21 +417,30 @@ export default function Home() {
 
       <section id="productos" className="products-section section-shell">
         <div className="section-heading products-heading">
-          <div><p>elegidos para vos</p><h2>{query ? `Resultados para “${query}”` : 'Imperdibles de la semana'}</h2></div>
+          <div><p>{filtered.length} productos</p><h2>{query ? `Resultados para “${query}”` : selectedCategory === 'Todos' ? 'Catálogo completo' : selectedCategory}</h2></div>
           <div className="filter-pills" aria-label="Filtrar productos">
-            {['Todos', 'Perfumería', 'Cuidados corporales', 'Rostro', 'Cabello', 'Maquillaje', 'Infantil'].map((category) => <button key={category} className={selectedCategory === category ? 'active' : ''} onClick={() => setSelectedCategory(category)}>{category === 'Cuidados corporales' ? 'Cuerpo' : category}</button>)}
+            {['Todos', ...categories.map((category) => category.name)].map((category) => <button key={category} className={selectedCategory === category ? 'active' : ''} onClick={() => { setSelectedCategory(category); setPage(1); }}>{category}</button>)}
           </div>
         </div>
 
         {filtered.length ? (
           <div className="product-grid">
-            {filtered.map((product) => (
+            {visibleProducts.map((product) => (
               <article className="product-card" key={product.id}>
                 <div className="product-image">
                   {product.tag && <span className="product-tag">{product.tag}</span>}
                   {!!product.discount && <span className="discount">-{product.discount}%</span>}
                   <button className={`heart ${favorites.includes(product.id) ? 'saved' : ''}`} aria-label={favorites.includes(product.id) ? 'Quitar de favoritos' : 'Guardar en favoritos'} onClick={() => setFavorites((current) => current.includes(product.id) ? current.filter((id) => id !== product.id) : [...current, product.id])}>{favorites.includes(product.id) ? '♥' : '♡'}</button>
-                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <img src={product.image} alt={product.name} loading="lazy" onError={(event) => {
+                    const image = event.currentTarget;
+                    if (!image.dataset.fallback) {
+                      image.dataset.fallback = 'product';
+                      image.src = `https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/Produtos/NATBRA-${product.sku}_1.jpg`;
+                    } else if (image.dataset.fallback !== 'local') {
+                      image.dataset.fallback = 'local';
+                      image.src = '/catalog/producto-natura.svg';
+                    }
+                  }} />
                 </div>
                 <div className="product-info">
                   <span className="product-brand">{product.brand}</span>
@@ -435,12 +454,17 @@ export default function Home() {
             ))}
           </div>
         ) : <div className="empty-state"><span>⌕</span><h3>No encontramos productos</h3><p>Probá con otra búsqueda o mirá todas las categorías.</p><button onClick={() => { setQuery(''); setSelectedCategory('Todos'); }}>ver todos</button></div>}
-        <p className="demo-prices">Precios en pesos uruguayos calculados a partir del catálogo brasileño (precio en reales × 10). Stock y precio final sujetos a confirmación.</p>
+        {filtered.length > PAGE_SIZE && <nav className="catalog-pagination" aria-label="Páginas del catálogo">
+          <button disabled={page === 1} onClick={() => { setPage((current) => Math.max(1, current - 1)); document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }); }}>← anterior</button>
+          <span>Página {page} de {totalPages}</span>
+          <button disabled={page === totalPages} onClick={() => { setPage((current) => Math.min(totalPages, current + 1)); document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }); }}>siguiente →</button>
+        </nav>}
+        <p className="demo-prices">Precios en pesos uruguayos. Stock y precio final sujetos a confirmación.</p>
       </section>
 
       <section className="story-banner section-shell">
         <div className="story-art"><span>amazonia viva</span><b>Ekos</b></div>
-        <div className="story-copy"><p>belleza que regenera</p><h2>Cuando cuidás de vos,<br />también cuidás del mundo.</h2><span>Fórmulas veganas, activos de la biodiversidad y envases con menos plástico.</span><button onClick={() => chooseCategory('Cuidados corporales')}>conocer ekos</button></div>
+        <div className="story-copy"><p>belleza que regenera</p><h2>Cuando cuidás de vos,<br />también cuidás del mundo.</h2><span>Fórmulas veganas, activos de la biodiversidad y envases con menos plástico.</span><a href="https://www.naturacosmeticos.com.ar/c/ekos?srsltid=AfmBOoqWVTNWvndSiRLWwEwkMnZPBQg_g2kwPDRD4tJdeEUHBmOfU09T" target="_blank" rel="noreferrer">conocer ekos</a></div>
       </section>
 
       <section className="newsletter service-callout">

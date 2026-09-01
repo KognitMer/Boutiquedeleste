@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Producto Natura">
+  <rect width="640" height="640" fill="#f8f5f0"/>
+  <path d="M320 156c47 0 90 22 117 60-45 2-83 19-117 53-34-34-72-51-117-53 27-38 70-60 117-60Z" fill="#e75b13" opacity=".2"/>
+  <path d="M320 484c-82 0-148-66-148-148 0-32 10-61 27-85 52 1 92 21 121 61 29-40 69-60 121-61 17 24 27 53 27 85 0 82-66 148-148 148Z" fill="#e75b13" opacity=".12"/>
+  <text x="320" y="355" text-anchor="middle" fill="#bd3f08" font-family="Georgia,serif" font-size="62" font-style="italic">natura</text>
+  <text x="320" y="397" text-anchor="middle" fill="#726b65" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">URUGUAY</text>
+</svg>
