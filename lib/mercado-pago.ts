@@ -1,5 +1,5 @@
 import { products } from '@/lib/catalog';
-import { mercadoPagoSurcharge } from '@/lib/pricing';
+import { MERCADO_PAGO_SURCHARGE_PERCENT, mercadoPagoSurcharge } from '@/lib/pricing';
 
 const MERCADO_PAGO_API = 'https://api.mercadopago.com';
 
@@ -93,7 +93,7 @@ export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], pa
   const items = [
     ...productItems,
     {
-      title: 'Recargo por pago con Mercado Pago (15%)',
+      title: `Recargo por pago con Mercado Pago (${MERCADO_PAGO_SURCHARGE_PERCENT}%)`,
       unit_price: surcharge.toFixed(2),
       quantity: 1,
       unit_measure: 'unit',

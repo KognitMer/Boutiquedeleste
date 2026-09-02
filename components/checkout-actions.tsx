@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { mercadoPagoSurcharge } from '@/lib/pricing';
+import { MERCADO_PAGO_SURCHARGE_PERCENT, mercadoPagoSurcharge } from '@/lib/pricing';
 
 type CheckoutActionsProps = {
   cart: Record<number, number>;
@@ -60,7 +60,7 @@ export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActions
   return (
     <div className="checkout-actions">
       <div className="mercado-pago-summary" aria-label="Total pagando con Mercado Pago">
-        <span>Recargo Mercado Pago (15%) <b>{currency.format(surcharge)}</b></span>
+        <span>Recargo Mercado Pago ({MERCADO_PAGO_SURCHARGE_PERCENT}%) <b>{currency.format(surcharge)}</b></span>
         <strong>Total con Mercado Pago <b>{currency.format(paymentTotal)}</b></strong>
       </div>
       <label htmlFor="checkout-email">Correo para la confirmación</label>
