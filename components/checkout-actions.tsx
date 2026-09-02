@@ -1,18 +1,27 @@
 'use client';
 
 import { useState } from 'react';
+import { mercadoPagoSurcharge } from '@/lib/pricing';
 
 type CheckoutActionsProps = {
   cart: Record<number, number>;
+  subtotal: number;
   whatsappUrl: string;
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const currency = new Intl.NumberFormat('es-UY', {
+  style: 'currency',
+  currency: 'UYU',
+  maximumFractionDigits: 0,
+});
 
-export function CheckoutActions({ cart, whatsappUrl }: CheckoutActionsProps) {
+export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActionsProps) {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const surcharge = mercadoPagoSurcharge(subtotal);
+  const paymentTotal = subtotal + surcharge;
 
   async function startPayment() {
     if (!emailPattern.test(email.trim())) {
@@ -50,6 +59,10 @@ export function CheckoutActions({ cart, whatsappUrl }: CheckoutActionsProps) {
 
   return (
     <div className="checkout-actions">
+      <div className="mercado-pago-summary" aria-label="Total pagando con Mercado Pago">
+        <span>Recargo Mercado Pago (15%) <b>{currency.format(surcharge)}</b></span>
+        <strong>Total con Mercado Pago <b>{currency.format(paymentTotal)}</b></strong>
+      </div>
       <label htmlFor="checkout-email">Correo para la confirmación</label>
       <input
         id="checkout-email"
@@ -63,7 +76,7 @@ export function CheckoutActions({ cart, whatsappUrl }: CheckoutActionsProps) {
       />
       <small id="checkout-email-help">Mercado Pago lo utiliza para identificar y confirmar la compra.</small>
       <button className="mercado-pago-button" type="button" onClick={startPayment} disabled={loading}>
-        {loading ? 'abriendo Mercado Pago…' : 'pagar con Mercado Pago'}
+        {loading ? 'abriendo Mercado Pago…' : `pagar ${currency.format(paymentTotal)} con Mercado Pago`}
       </button>
       <a className="whatsapp-checkout" href={whatsappUrl} target="_blank" rel="noreferrer">
         enviar pedido por WhatsApp

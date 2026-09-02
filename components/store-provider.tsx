@@ -88,7 +88,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
               </div>
               <div className="shipping-progress"><div><span>{cartTotal >= 2500 ? '¡Tenés envío gratis!' : `Te faltan ${currency.format(2500 - cartTotal)} para envío gratis`}</span><b>{Math.min(100, Math.round(cartTotal / 25))}%</b></div><i><em style={{ width: `${Math.min(100, cartTotal / 25)}%` }} /></i></div>
               <div className="cart-total"><span>Subtotal</span><strong>{currency.format(cartTotal)}</strong></div>
-              <CheckoutActions cart={cart} whatsappUrl={whatsappUrl} />
+              <CheckoutActions cart={cart} subtotal={cartTotal} whatsappUrl={whatsappUrl} />
             </> : <div className="empty-cart"><span>♧</span><h3>Tu bolsa está vacía</h3><p>Descubrí los favoritos de esta semana.</p><button onClick={() => setCartOpen(false)}>seguir comprando</button></div>}
           </aside>
         </div>

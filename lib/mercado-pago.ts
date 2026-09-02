@@ -1,4 +1,5 @@
 import { products } from '@/lib/catalog';
+import { mercadoPagoSurcharge } from '@/lib/pricing';
 
 const MERCADO_PAGO_API = 'https://api.mercadopago.com';
 
@@ -86,8 +87,20 @@ async function mercadoPagoRequest(path: string, init?: RequestInit) {
 }
 
 export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], payerEmail: string) {
-  const items = buildOrderItems(itemsInput);
-  const totalAmount = items.reduce((total, item) => total + Number(item.total_amount), 0).toFixed(2);
+  const productItems = buildOrderItems(itemsInput);
+  const subtotal = productItems.reduce((total, item) => total + Number(item.total_amount), 0);
+  const surcharge = mercadoPagoSurcharge(subtotal);
+  const items = [
+    ...productItems,
+    {
+      title: 'Recargo por pago con Mercado Pago (15%)',
+      unit_price: surcharge.toFixed(2),
+      quantity: 1,
+      unit_measure: 'unit',
+      total_amount: surcharge.toFixed(2),
+    },
+  ];
+  const totalAmount = (subtotal + surcharge).toFixed(2);
   const siteUrl = getSiteUrl();
   const externalReference = `NU-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
 
