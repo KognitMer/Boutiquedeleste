@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { currency, products, type Product } from '@/lib/catalog';
+import { CheckoutActions } from '@/components/checkout-actions';
 
 type StoreContextValue = {
   cart: Record<number, number>;
@@ -68,6 +69,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const cartItems = products.filter((product) => cart[product.id]);
   const cartCount = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
   const cartTotal = cartItems.reduce((sum, product) => sum + product.price * cart[product.id], 0);
+  const whatsappLines = cartItems.map((product) => `${cart[product.id]} × ${product.brand} ${product.name} — ${currency.format(product.price * cart[product.id])}`);
+  const whatsappMessage = `Hola, quiero realizar este pedido de Natura Uruguay:\n\n${whatsappLines.join('\n')}\n\nTotal: ${currency.format(cartTotal)}\n\n¿Podrían confirmarme disponibilidad y entrega?`;
+  const whatsappUrl = `https://wa.me/59892143420?text=${encodeURIComponent(whatsappMessage)}`;
   const value = useMemo(() => ({ cart, favorites, cartCount, addToCart, changeQuantity, toggleFavorite, openCart: () => setCartOpen(true), showNotice }), [cart, favorites, cartCount]);
 
   return (
@@ -84,8 +88,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
               </div>
               <div className="shipping-progress"><div><span>{cartTotal >= 2500 ? '¡Tenés envío gratis!' : `Te faltan ${currency.format(2500 - cartTotal)} para envío gratis`}</span><b>{Math.min(100, Math.round(cartTotal / 25))}%</b></div><i><em style={{ width: `${Math.min(100, cartTotal / 25)}%` }} /></i></div>
               <div className="cart-total"><span>Subtotal</span><strong>{currency.format(cartTotal)}</strong></div>
-              <button className="checkout" onClick={() => showNotice('El checkout se conectará al medio de pago de tu tienda.')}>continuar compra</button>
-              <small className="checkout-note">Impuestos incluidos · Checkout de demostración</small>
+              <CheckoutActions cart={cart} whatsappUrl={whatsappUrl} />
             </> : <div className="empty-cart"><span>♧</span><h3>Tu bolsa está vacía</h3><p>Descubrí los favoritos de esta semana.</p><button onClick={() => setCartOpen(false)}>seguir comprando</button></div>}
           </aside>
         </div>

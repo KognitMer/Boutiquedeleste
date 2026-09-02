@@ -154,6 +154,32 @@ footer > div { display: flex; flex-direction: column; align-items: flex-start; g
 .cart-list { display: grid; gap: 0; }.cart-list article { display: grid; grid-template-columns: 92px 1fr; gap: 15px; padding: 17px 0; border-bottom: 1px solid var(--line); }.cart-list img { width: 92px; height: 104px; object-fit: contain; background: #f6f2ec; }.cart-list article > div > span { color: var(--orange); font-size: 8px; font-weight: 700; text-transform: uppercase; }.cart-list h3 { margin: 5px 0 8px; font: 500 13px/1.35 var(--serif); }.cart-list strong { font-size: 13px; }.quantity { float: right; display: flex; align-items: center; border: 1px solid var(--line); }.quantity button { width: 26px; height: 25px; border: 0; background: transparent; cursor: pointer; }.quantity b { width: 23px; text-align: center; font-size: 10px; }
 .shipping-progress { margin: 21px 0; }.shipping-progress > div { display: flex; justify-content: space-between; margin-bottom: 8px; color: var(--green); font-size: 9px; }.shipping-progress > i { display: block; height: 5px; background: #e6e1da; border-radius: 3px; overflow: hidden; }.shipping-progress em { display: block; height: 100%; background: var(--green); transition: width .2s; }
 .cart-total { display: flex; justify-content: space-between; align-items: end; padding-top: 16px; border-top: 1px solid var(--line); }.cart-total span { font-size: 12px; }.cart-total strong { font: 500 25px var(--serif); }.checkout { width: 100%; margin-top: 20px; padding: 14px; border: 0; background: var(--orange); color: white; text-transform: uppercase; font-size: 10px; font-weight: 700; cursor: pointer; }.checkout-note { display: block; margin-top: 8px; color: var(--muted); font-size: 8px; text-align: center; }.empty-cart { min-height: 65vh; display: grid; place-items: center; align-content: center; text-align: center; }.empty-cart > span { color: var(--orange); font-size: 50px; }.empty-cart h3 { margin: 10px 0 0; font: 500 25px var(--serif); }.empty-cart p { color: var(--muted); font-size: 11px; }
+.checkout-actions { display: grid; gap: 8px; margin-top: 20px; }
+.checkout-actions > label { color: var(--ink); font-size: 10px; font-weight: 700; }
+.checkout-actions > input { width: 100%; border: 1px solid var(--line); border-radius: 3px; padding: 12px 13px; background: #fff; color: var(--ink); font: 12px var(--sans); outline: none; }
+.checkout-actions > input:focus { border-color: #3483fa; box-shadow: 0 0 0 3px #3483fa20; }
+.checkout-actions > small:not(.checkout-note) { margin-top: -3px; color: var(--muted); font-size: 8px; line-height: 1.4; }
+.mercado-pago-button, .whatsapp-checkout { width: 100%; min-height: 44px; display: grid; place-items: center; border: 0; border-radius: 4px; padding: 13px; font-size: 10px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+.mercado-pago-button { margin-top: 5px; background: #3483fa; color: #fff; }
+.mercado-pago-button:hover { background: #2968c8; }
+.mercado-pago-button:disabled { opacity: .65; cursor: wait; }
+.whatsapp-checkout { border: 1px solid #1f8f57; background: #fff; color: #177a49; }
+.whatsapp-checkout:hover { background: #edf9f3; }
+.checkout-error { margin: 2px 0 0; padding: 9px 11px; border-left: 3px solid #b73b31; background: #fff0ee; color: #8b2c24; font-size: 9px; line-height: 1.45; }
+.payment-result { min-height: 100vh; display: grid; place-items: center; align-content: center; gap: 24px; padding: 36px 20px; background: radial-gradient(circle at 50% 0, #fff 0, #f7f1e9 62%, #efe5d8 100%); }
+.payment-wordmark { color: var(--orange); font: 500 33px var(--serif); letter-spacing: -.05em; }.payment-wordmark small { margin-left: 4px; color: var(--ink); font: 700 9px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.payment-result-card { width: min(570px, 100%); padding: clamp(32px, 7vw, 58px); border: 1px solid #e8dfd5; border-radius: 8px; background: #fffdf9; box-shadow: 0 24px 70px #4a312018; text-align: center; }
+.payment-result-icon { width: 66px; height: 66px; display: grid; place-items: center; margin: 0 auto 20px; border-radius: 50%; background: var(--green); color: #fff; font-size: 31px; }
+.payment-result-rechazado .payment-result-icon, .payment-result-desconocido .payment-result-icon { background: #b34b3e; }.payment-result-pendiente .payment-result-icon { background: #b87827; }
+.payment-result-card > p { margin: 0 0 10px; color: var(--orange); font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.payment-result-card h1 { margin: 0 0 14px; font: 500 clamp(31px, 6vw, 46px)/1.05 var(--serif); letter-spacing: -.04em; }
+.payment-result-card > div { color: var(--muted); font-size: 13px; line-height: 1.65; }
+.payment-result-card dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 7px 16px; margin: 25px 0; padding: 17px; background: #f8f3ed; text-align: left; }
+.payment-result-card dt { color: var(--muted); font-size: 9px; }.payment-result-card dd { margin: 0; overflow-wrap: anywhere; color: var(--ink); font-size: 9px; font-weight: 700; text-align: right; }
+.payment-result-card .payment-result-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 25px; }
+.payment-result-actions a { display: grid; place-items: center; min-height: 43px; padding: 11px; border: 1px solid var(--orange); border-radius: 4px; color: var(--orange-dark); font-size: 9px; font-weight: 700; text-transform: uppercase; }.payment-result-actions a:first-child { background: var(--orange); color: #fff; }
+.payment-result-card > small { display: block; margin-top: 18px; color: #8a827a; font-size: 8px; line-height: 1.5; }
+@media (max-width: 520px) { .payment-result-card .payment-result-actions { grid-template-columns: 1fr; } }
 .product-modal-layer { display: grid; place-items: center; padding: 24px; }
 .product-modal { width: min(850px, 100%); max-height: min(720px, calc(100vh - 48px)); display: grid; grid-template-columns: 46% 54%; overflow: auto; background: var(--paper); box-shadow: 0 24px 80px #25170e42; position: relative; animation: modal-in .22s ease-out; }
 .modal-close { position: absolute; z-index: 3; top: 14px; right: 17px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: #fff; color: var(--ink); box-shadow: 0 3px 12px #2d1f171e; font-size: 27px; line-height: 1; cursor: pointer; }

@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { products as catalogProducts } from './catalog-data';
+import { CheckoutActions } from '@/components/checkout-actions';
 
 type Product = {
   id: number;
@@ -369,10 +370,10 @@ export default function Home() {
     window.setTimeout(() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' }), 20);
   }
 
-  function sendOrderToWhatsApp() {
+  function whatsappOrderUrl() {
     const lines = cartItems.map((product) => `${cart[product.id]} × ${product.brand} ${product.name} — ${currency.format(product.price * cart[product.id])}`);
     const order = `Hola, quiero realizar este pedido de Natura Uruguay:\n\n${lines.join('\n')}\n\nTotal: ${currency.format(cartTotal)}\n\n¿Podrían confirmarme disponibilidad y entrega?`;
-    window.open(`https://wa.me/59892143420?text=${encodeURIComponent(order)}`, '_blank', 'noopener,noreferrer');
+    return `https://wa.me/59892143420?text=${encodeURIComponent(order)}`;
   }
 
   return (
@@ -528,8 +529,7 @@ export default function Home() {
                 {cartItems.map((product) => <article key={product.id}><img src={product.image} alt="" /><div><span>{product.brand}</span><h3>{product.name}</h3><strong>{currency.format(product.price)}</strong><div className="quantity"><button aria-label="Quitar uno" onClick={() => changeQuantity(product.id, -1)}>−</button><b>{cart[product.id]}</b><button aria-label="Agregar uno" onClick={() => changeQuantity(product.id, 1)}>+</button></div></div></article>)}
               </div>
               <div className="cart-total"><span>Subtotal</span><strong>{currency.format(cartTotal)}</strong></div>
-              <button className="checkout" onClick={sendOrderToWhatsApp}>enviar pedido por WhatsApp</button>
-              <small className="checkout-note">Se abrirá WhatsApp con el pedido listo para enviar al +598 92 143 420.</small>
+              <CheckoutActions cart={cart} whatsappUrl={whatsappOrderUrl()} />
             </> : <div className="empty-cart"><span>♧</span><h3>Tu bolsa está vacía</h3><p>Descubrí los favoritos de esta semana.</p><button onClick={() => setCartOpen(false)}>seguir comprando</button></div>}
           </aside>
         </div>
