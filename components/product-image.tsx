@@ -2,7 +2,7 @@
 
 import type { ImgHTMLAttributes, SyntheticEvent } from 'react';
 
-export const PRODUCT_IMAGE_FALLBACK = '/catalog/producto-natura.svg';
+export const PRODUCT_IMAGE_FALLBACK = '/catalog/producto-boutique.svg';
 
 type ProductImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
   src: string;

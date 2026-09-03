@@ -44,7 +44,7 @@ const seedProducts: Omit<Product, 'sku'>[] = [
     tag: 'lanzamiento',
     image: '/catalog/kaiak-21k.webp',
     description: 'Frescor aromático con notas amaderadas y un toque vibrante de jengibre.',
-    details: ['Fragancia masculina de 100 ml', 'Frescor prolongado', 'Producto del catálogo Ciclo 14'],
+    details: ['Fragancia masculina de 100 ml', 'Frescor prolongado', 'Producto seleccionado'],
   },
   {
     id: 2,
@@ -374,7 +374,7 @@ export default function Home() {
 
   function whatsappOrderUrl() {
     const lines = cartItems.map((product) => `${cart[product.id]} × ${product.brand} ${product.name} — ${currency.format(product.price * cart[product.id])}`);
-    const order = `Hola, quiero realizar este pedido de Natura Uruguay:\n\n${lines.join('\n')}\n\nTotal: ${currency.format(cartTotal)}\n\n¿Podrían confirmarme disponibilidad y entrega?`;
+    const order = `Hola, quiero realizar este pedido de Boutique del Este:\n\n${lines.join('\n')}\n\nTotal: ${currency.format(cartTotal)}\n\n¿Podrían confirmarme disponibilidad y entrega?`;
     return `https://wa.me/59892143420?text=${encodeURIComponent(order)}`;
   }
 
@@ -388,14 +388,14 @@ export default function Home() {
 
       <header className="site-header">
         <button className="mobile-menu" aria-label="Abrir menú" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-        <a className="wordmark" href="#inicio" aria-label="Natura Uruguay, inicio">natura<small>uruguay</small></a>
+        <a className="wordmark" href="#inicio" aria-label="Boutique del Este, inicio">boutique<small>del este</small></a>
         <form className="search" onSubmit={submitSearch} role="search">
           <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="¿qué estás buscando hoy?" aria-label="Buscar productos" />
           <button aria-label="Buscar"><Icon>⌕</Icon></button>
         </form>
         <div className="account-actions">
           <button aria-label="Mis favoritos"><Icon>♡</Icon><span>favoritos</span></button>
-          <button aria-label="Ingresar a mi cuenta"><Icon>♙</Icon><span>ingresar</span></button>
+          <button aria-label="Consultar por WhatsApp" onClick={() => window.open('https://wa.me/59892143420', '_blank', 'noopener,noreferrer')}><Icon>◌</Icon><span>consultas</span></button>
           <button className="bag-button" aria-label={`Bolsa con ${cartCount} productos`} onClick={() => setCartOpen(true)}>
             <Icon>♧</Icon><b>{cartCount}</b><span>mi bolsa</span>
           </button>
@@ -408,22 +408,27 @@ export default function Home() {
         ))}
       </nav>
 
-      <section id="inicio" className="hero catalog-hero" aria-label="Catálogo actual Natura">
-        <img src="/catalog/kaiak-21k.webp" alt="Natura Kaiak 21K, lanzamiento del catálogo Ciclo 14" />
+      <aside className="brand-disclaimer" aria-label="Información de la tienda">
+        <strong>Tienda independiente</strong>
+        <span>Comercializamos productos originales de marcas seleccionadas. No somos el sitio oficial de Natura ni de Avon.</span>
+      </aside>
+
+      <section id="inicio" className="hero catalog-hero" aria-label="Selección de belleza de Boutique del Este">
+        <img src="/catalog/kaiak-21k.webp" alt="Perfume Kaiak disponible en Boutique del Este" />
         <div className="hero-scrim" />
         <div className="hero-copy">
-          <p>catálogo natura · ciclo 14</p>
-          <h1>Tus favoritos Natura,<br /><em>ahora más cerca.</em></h1>
-          <span>Entrega en 24 horas en Maldonado y Punta del Este</span>
-          <button onClick={() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' })}>ver catálogo</button>
+          <p>selección de belleza · Uruguay</p>
+          <h1>Tu boutique de belleza,<br /><em>cerca de vos.</em></h1>
+          <span>Productos elegidos para tu rutina, con atención personal y entrega coordinada.</span>
+          <button onClick={() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' })}>explorar productos</button>
         </div>
-        <div className="hero-dots" aria-hidden="true"><i className="active" /><i /><i /></div>
+        <div className="hero-stamp" aria-hidden="true"><span>DEL</span><strong>ESTE</strong></div>
       </section>
 
       <section className="benefits" aria-label="Beneficios de compra">
         <article><Icon>◇</Icon><div><strong>Entrega en 24 horas</strong><span>Maldonado y Punta del Este</span></div></article>
         <article><Icon>◎</Icon><div><strong>Precios claros</strong><span>expresados en pesos uruguayos</span></div></article>
-        <article><Icon>♲</Icon><div><strong>Opciones conscientes</strong><span>fórmulas veganas y repuestos</span></div></article>
+        <article><Icon>✦</Icon><div><strong>Selección cuidada</strong><span>productos originales de marcas elegidas</span></div></article>
         <article><Icon>⌂</Icon><div><strong>Atención cercana</strong><span>confirmamos disponibilidad al pedir</span></div></article>
       </section>
 
@@ -479,8 +484,8 @@ export default function Home() {
       </section>
 
       <section className="story-banner section-shell">
-        <div className="story-art"><span>amazonia viva</span><b>Ekos</b></div>
-        <div className="story-copy"><p>belleza que regenera</p><h2>Cuando cuidás de vos,<br />también cuidás del mundo.</h2><span>Fórmulas veganas, activos de la biodiversidad y envases con menos plástico.</span><a href="#ekos-info">conocer ekos</a></div>
+        <div className="story-art"><span>selección del este</span><b>Tu ritual</b></div>
+        <div className="story-copy"><p>una tienda a tu manera</p><h2>Elegí con calma.<br />Nosotros coordinamos el resto.</h2><span>Reunimos perfumería, maquillaje y cuidado personal en un solo lugar, con asesoramiento directo y entrega acordada.</span><a href="#productos">explorar la selección</a></div>
       </section>
 
       <section id="ekos-info" className="ekos-info section-shell" aria-labelledby="ekos-title">
@@ -503,12 +508,12 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="wordmark footer-logo" href="#inicio">natura<small>uruguay</small></a>
+        <a className="wordmark footer-logo" href="#inicio">boutique<small>del este</small></a>
         <div><strong>comprá</strong><a href="#productos">Promociones</a><a href="#productos">Perfumería</a><a href="#productos">Cuidado personal</a><a href="#productos">Regalos</a></div>
         <div><strong>ayuda</strong><a href="#inicio">Preguntas frecuentes</a><a href="#inicio">Envíos y entregas</a><a href="#inicio">Cambios y devoluciones</a><a href="#inicio">Contacto</a></div>
-        <div><strong>natura uruguay</strong><a href="#inicio">Sobre Natura</a><a href="#inicio">Sustentabilidad</a><a href="#inicio">Quiero vender</a><a href="#inicio">Encontrá una consultora</a></div>
+        <div><strong>boutique del este</strong><a href="#inicio">Nuestra selección</a><a href="#productos">Marcas y productos</a><a href="https://wa.me/59892143420">Asesoramiento</a><a href="#inicio">Cómo comprar</a></div>
         <div className="country"><span>Uruguay · UYU</span><small>Maldonado y Punta del Este</small></div>
-        <p className="legal">Tienda independiente. Natura y sus líneas de producto son marcas de sus respectivos titulares. Disponibilidad sujeta a confirmación.</p>
+        <p className="legal">Boutique del Este es una tienda independiente y no es el sitio oficial de Natura ni de Avon. Las marcas y líneas publicadas pertenecen a sus respectivos titulares. Disponibilidad sujeta a confirmación.</p>
         <CatalogUpdateStatus />
       </footer>
 

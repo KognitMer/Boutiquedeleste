@@ -70,13 +70,13 @@ export default async function PaymentResultPage({ params, searchParams }: Paymen
   if (!orderId && ['aprobado', 'pendiente', 'rechazado'].includes(routeResult)) result = 'desconocido';
 
   const content = resultContent[result];
-  const message = `Hola, consulto por mi pago de Natura Uruguay${reference ? `, referencia ${reference}` : ''}${orderId ? `, orden ${orderId}` : ''}.`;
+  const message = `Hola, consulto por mi pago de Boutique del Este${reference ? `, referencia ${reference}` : ''}${orderId ? `, orden ${orderId}` : ''}.`;
   const whatsappUrl = `https://wa.me/59892143420?text=${encodeURIComponent(message)}`;
 
   return (
     <main className={`payment-result payment-result-${result}`}>
       {result === 'aprobado' && <ClearPaidCart />}
-      <Link className="payment-wordmark" href="/" aria-label="Volver a Natura Uruguay">natura<small>uruguay</small></Link>
+      <Link className="payment-wordmark" href="/" aria-label="Volver a Boutique del Este">boutique<small>del este</small></Link>
       <section className="payment-result-card">
         <span className="payment-result-icon" aria-hidden="true">{content.icon}</span>
         <p>{content.eyebrow}</p>

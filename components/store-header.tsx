@@ -34,14 +34,14 @@ export function StoreHeader() {
     <div className="top-strip"><span>Entrega en 24 h en Maldonado y Punta del Este</span><span>Precios en pesos uruguayos</span><span>Stock sujeto a confirmación</span></div>
     <header className="site-header">
       <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-      <a className="wordmark" href="/" aria-label="Natura Uruguay, inicio">natura<small>uruguay</small></a>
+      <a className="wordmark" href="/" aria-label="Boutique del Este, inicio">boutique<small>del este</small></a>
       <form className="search" onSubmit={submitSearch} role="search">
         <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="¿qué estás buscando hoy?" aria-label="Buscar productos" />
         <button aria-label="Buscar"><Icon>⌕</Icon></button>
       </form>
       <div className="account-actions">
         <button aria-label="Mis favoritos" onClick={() => showNotice('Tus favoritos quedan guardados en este dispositivo.')}><Icon>♡</Icon><span>favoritos</span></button>
-        <button aria-label="Ingresar a mi cuenta" onClick={() => showNotice('El acceso de clientes se conectará en la próxima etapa.')}><Icon>♙</Icon><span>ingresar</span></button>
+        <button aria-label="Consultar por WhatsApp" onClick={() => window.open('https://wa.me/59892143420', '_blank', 'noopener,noreferrer')}><Icon>◌</Icon><span>consultas</span></button>
         <button className="bag-button" aria-label={`Bolsa con ${cartCount} productos`} onClick={openCart}><Icon>♧</Icon><b>{cartCount}</b><span>mi bolsa</span></button>
       </div>
     </header>

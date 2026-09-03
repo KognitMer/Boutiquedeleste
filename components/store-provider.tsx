@@ -71,7 +71,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const cartCount = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
   const cartTotal = cartItems.reduce((sum, product) => sum + product.price * cart[product.id], 0);
   const whatsappLines = cartItems.map((product) => `${cart[product.id]} × ${product.brand} ${product.name} — ${currency.format(product.price * cart[product.id])}`);
-  const whatsappMessage = `Hola, quiero realizar este pedido de Natura Uruguay:\n\n${whatsappLines.join('\n')}\n\nTotal: ${currency.format(cartTotal)}\n\n¿Podrían confirmarme disponibilidad y entrega?`;
+  const whatsappMessage = `Hola, quiero realizar este pedido de Boutique del Este:\n\n${whatsappLines.join('\n')}\n\nTotal: ${currency.format(cartTotal)}\n\n¿Podrían confirmarme disponibilidad y entrega?`;
   const whatsappUrl = `https://wa.me/59892143420?text=${encodeURIComponent(whatsappMessage)}`;
   const value = useMemo(() => ({ cart, favorites, cartCount, addToCart, changeQuantity, toggleFavorite, openCart: () => setCartOpen(true), showNotice }), [cart, favorites, cartCount]);
 
