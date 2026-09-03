@@ -185,6 +185,20 @@ function replaceProductPrice(source, product, newPrice) {
   return updated;
 }
 
+function replaceCatalogTimestamp(source, timestamp) {
+  const pattern = /export const catalogLastUpdatedAt = "[^"]+";/;
+  const updated = source.replace(
+    pattern,
+    `export const catalogLastUpdatedAt = "${timestamp}";`,
+  );
+
+  if (updated === source) {
+    throw new Error('No se pudo actualizar la fecha del catalogo.');
+  }
+
+  return updated;
+}
+
 const source = await readFile(catalogPath, 'utf8');
 const fullCatalog = parseCatalog(source);
 const products =
@@ -234,6 +248,13 @@ if (successRatio < MIN_SUCCESS_RATIO) {
     updatedSource = replaceProductPrice(updatedSource, product, uyuPrice);
   }
 
+  if (!DRY_RUN && !requestedLimit) {
+    updatedSource = replaceCatalogTimestamp(
+      updatedSource,
+      new Date().toISOString(),
+    );
+  }
+
   console.log(
     `Fichas leídas: ${successful.length}/${products.length}. Cambios de precio: ${changed.length}.`,
   );
@@ -258,7 +279,7 @@ if (successRatio < MIN_SUCCESS_RATIO) {
 
   if (DRY_RUN) {
     console.log('Simulación finalizada: no se modificó el catálogo.');
-  } else if (changed.length === 0) {
+  } else if (updatedSource === source) {
     console.log('El catálogo ya estaba actualizado.');
   } else {
     const temporaryPath = `${catalogPath}.tmp`;

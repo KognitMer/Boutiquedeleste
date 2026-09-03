@@ -13,6 +13,8 @@ export type Product = {
   details: string[];
 };
 
+export const catalogLastUpdatedAt = "2026-09-03T05:09:05.054Z";
+
 export const products: Product[] = [
   {
     "id": 2190,

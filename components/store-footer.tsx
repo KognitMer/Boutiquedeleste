@@ -1,3 +1,5 @@
+import { CatalogUpdateStatus } from '@/components/catalog-update-status';
+
 export function StoreFooter() {
   return <footer>
     <a className="wordmark footer-logo" href="/">natura<small>uruguay</small></a>
@@ -6,5 +8,6 @@ export function StoreFooter() {
     <div><strong>natura uruguay</strong><a href="/#inicio">Sobre Natura</a><a href="/#inicio">Sustentabilidad</a><a href="/#inicio">Quiero vender</a><a href="/#inicio">Encontrá una consultora</a></div>
     <div className="country"><span>Uruguay · UYU</span><small>Montevideo y todo el país</small></div>
     <p className="legal">Propuesta digital de tienda para Uruguay. Natura y sus líneas de producto son marcas de sus respectivos titulares.</p>
+    <CatalogUpdateStatus />
   </footer>;
 }

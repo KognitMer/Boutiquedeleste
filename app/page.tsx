@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { products as catalogProducts } from './catalog-data';
 import { CheckoutActions } from '@/components/checkout-actions';
+import { CatalogUpdateStatus } from '@/components/catalog-update-status';
 import { ProductImage } from '@/components/product-image';
 
 type Product = {
@@ -508,6 +509,7 @@ export default function Home() {
         <div><strong>natura uruguay</strong><a href="#inicio">Sobre Natura</a><a href="#inicio">Sustentabilidad</a><a href="#inicio">Quiero vender</a><a href="#inicio">Encontrá una consultora</a></div>
         <div className="country"><span>Uruguay · UYU</span><small>Maldonado y Punta del Este</small></div>
         <p className="legal">Tienda independiente. Natura y sus líneas de producto son marcas de sus respectivos titulares. Disponibilidad sujeta a confirmación.</p>
+        <CatalogUpdateStatus />
       </footer>
 
       {notice && <div className="toast" role="status">✓ {notice}</div>}
