@@ -2,6 +2,7 @@
 
 import { currency, type Product } from '@/lib/catalog';
 import { useStore } from '@/components/store-provider';
+import { ProductImage } from '@/components/product-image';
 
 export function ProductCard({ product }: { product: Product }) {
   const { addToCart, favorites, toggleFavorite } = useStore();
@@ -13,7 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
       {!!product.discount && <span className="discount">-{product.discount}%</span>}
       <button className={`heart ${saved ? 'saved' : ''}`} aria-label={saved ? 'Quitar de favoritos' : 'Guardar en favoritos'} onClick={() => toggleFavorite(product.id)}>{saved ? '♥' : '♡'}</button>
       <a className="product-image-link" href={`/productos/${product.sku}`} aria-label={`Ver ${product.name}`}>
-        <img src={product.image} alt={product.name} loading="lazy" onError={(event) => { event.currentTarget.src = '/catalog/producto-natura.svg'; }} />
+        <ProductImage src={product.image} alt={product.name} loading="lazy" />
         <span className="view-product">ver producto</span>
       </a>
     </div>

@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { currency, products, type Product } from '@/lib/catalog';
 import { CheckoutActions } from '@/components/checkout-actions';
+import { ProductImage } from '@/components/product-image';
 
 type StoreContextValue = {
   cart: Record<number, number>;
@@ -84,7 +85,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
             <div className="drawer-head"><div><span>tu compra</span><h2 id="cart-title">Mi bolsa ({cartCount})</h2></div><button aria-label="Cerrar bolsa" onClick={() => setCartOpen(false)}>×</button></div>
             {cartItems.length ? <>
               <div className="cart-list">
-                {cartItems.map((product) => <article key={product.id}><img src={product.image} alt="" /><div><span>{product.brand}</span><h3>{product.name}</h3><strong>{currency.format(product.price)}</strong><div className="quantity"><button aria-label="Quitar uno" onClick={() => changeQuantity(product.id, -1)}>−</button><b>{cart[product.id]}</b><button aria-label="Agregar uno" onClick={() => changeQuantity(product.id, 1)}>+</button></div></div></article>)}
+                {cartItems.map((product) => <article key={product.id}><ProductImage src={product.image} alt="" /><div><span>{product.brand}</span><h3>{product.name}</h3><strong>{currency.format(product.price)}</strong><div className="quantity"><button aria-label="Quitar uno" onClick={() => changeQuantity(product.id, -1)}>−</button><b>{cart[product.id]}</b><button aria-label="Agregar uno" onClick={() => changeQuantity(product.id, 1)}>+</button></div></div></article>)}
               </div>
               <div className="shipping-progress"><div><span>{cartTotal >= 2500 ? '¡Tenés envío gratis!' : `Te faltan ${currency.format(2500 - cartTotal)} para envío gratis`}</span><b>{Math.min(100, Math.round(cartTotal / 25))}%</b></div><i><em style={{ width: `${Math.min(100, cartTotal / 25)}%` }} /></i></div>
               <div className="cart-total"><span>Subtotal</span><strong>{currency.format(cartTotal)}</strong></div>

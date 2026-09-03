@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { products as catalogProducts } from './catalog-data';
 import { CheckoutActions } from '@/components/checkout-actions';
+import { ProductImage } from '@/components/product-image';
 
 type Product = {
   id: number;
@@ -454,16 +455,7 @@ export default function Home() {
                   {product.tag && <span className="product-tag">{product.tag}</span>}
                   {!!product.discount && <span className="discount">-{product.discount}%</span>}
                   <button className={`heart ${favorites.includes(product.id) ? 'saved' : ''}`} aria-label={favorites.includes(product.id) ? 'Quitar de favoritos' : 'Guardar en favoritos'} onClick={() => setFavorites((current) => current.includes(product.id) ? current.filter((id) => id !== product.id) : [...current, product.id])}>{favorites.includes(product.id) ? '♥' : '♡'}</button>
-                  <button className="product-image-button" aria-label={`Ampliar ${product.name}`} onClick={() => setSelectedProduct(product)}><img src={product.image} alt={product.name} loading="lazy" onError={(event) => {
-                    const image = event.currentTarget;
-                    if (!image.dataset.fallback) {
-                      image.dataset.fallback = 'product';
-                      image.src = `https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/Produtos/NATBRA-${product.sku}_1.jpg`;
-                    } else if (image.dataset.fallback !== 'local') {
-                      image.dataset.fallback = 'local';
-                      image.src = '/catalog/producto-natura.svg';
-                    }
-                  }} /><span>⌕ ver producto</span></button>
+                  <button className="product-image-button" aria-label={`Ampliar ${product.name}`} onClick={() => setSelectedProduct(product)}><ProductImage src={product.image} alt={product.name} loading="lazy" /><span>⌕ ver producto</span></button>
                 </div>
                 <div className="product-info">
                   <span className="product-brand">{product.brand}</span>
@@ -526,7 +518,7 @@ export default function Home() {
             <div className="drawer-head"><div><span>tu compra</span><h2 id="cart-title">Mi bolsa ({cartCount})</h2></div><button aria-label="Cerrar bolsa" onClick={() => setCartOpen(false)}>×</button></div>
             {cartItems.length ? <>
               <div className="cart-list">
-                {cartItems.map((product) => <article key={product.id}><img src={product.image} alt="" /><div><span>{product.brand}</span><h3>{product.name}</h3><strong>{currency.format(product.price)}</strong><div className="quantity"><button aria-label="Quitar uno" onClick={() => changeQuantity(product.id, -1)}>−</button><b>{cart[product.id]}</b><button aria-label="Agregar uno" onClick={() => changeQuantity(product.id, 1)}>+</button></div></div></article>)}
+                {cartItems.map((product) => <article key={product.id}><ProductImage src={product.image} alt="" /><div><span>{product.brand}</span><h3>{product.name}</h3><strong>{currency.format(product.price)}</strong><div className="quantity"><button aria-label="Quitar uno" onClick={() => changeQuantity(product.id, -1)}>−</button><b>{cart[product.id]}</b><button aria-label="Agregar uno" onClick={() => changeQuantity(product.id, 1)}>+</button></div></div></article>)}
               </div>
               <div className="cart-total"><span>Subtotal</span><strong>{currency.format(cartTotal)}</strong></div>
               <CheckoutActions cart={cart} subtotal={cartTotal} whatsappUrl={whatsappOrderUrl()} />
@@ -539,7 +531,7 @@ export default function Home() {
         <div className="drawer-layer product-modal-layer" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedProduct(null); }}>
           <section className="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-detail-title">
             <button className="modal-close" aria-label="Cerrar detalle" onClick={() => setSelectedProduct(null)}>×</button>
-            <div className="modal-image"><button onClick={() => setZoomProduct(selectedProduct)} aria-label={`Ampliar ${selectedProduct.name}`}><img src={selectedProduct.image} alt={selectedProduct.name} /><span>⌕ tocar para ampliar</span></button></div>
+            <div className="modal-image"><button onClick={() => setZoomProduct(selectedProduct)} aria-label={`Ampliar ${selectedProduct.name}`}><ProductImage src={selectedProduct.image} alt={selectedProduct.name} /><span>⌕ tocar para ampliar</span></button></div>
             <div className="modal-copy">
               <span>{selectedProduct.brand}</span>
               <h2 id="product-detail-title">{selectedProduct.name}</h2>
@@ -554,7 +546,7 @@ export default function Home() {
         </div>
       )}
 
-      {zoomProduct && <div className="home-zoom-layer" role="dialog" aria-modal="true" aria-label={`Vista ampliada de ${zoomProduct.name}`} onMouseDown={(event) => { if (event.target === event.currentTarget) setZoomProduct(null); }}><button aria-label="Cerrar imagen ampliada" onClick={() => setZoomProduct(null)}>×</button><img src={zoomProduct.image} alt={`Vista ampliada de ${zoomProduct.name}`} /></div>}
+      {zoomProduct && <div className="home-zoom-layer" role="dialog" aria-modal="true" aria-label={`Vista ampliada de ${zoomProduct.name}`} onMouseDown={(event) => { if (event.target === event.currentTarget) setZoomProduct(null); }}><button aria-label="Cerrar imagen ampliada" onClick={() => setZoomProduct(null)}>×</button><ProductImage src={zoomProduct.image} alt={`Vista ampliada de ${zoomProduct.name}`} /></div>}
     </main>
   );
 }
