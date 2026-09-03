@@ -11,6 +11,7 @@
     "build:vercel": "next build",
     "dev:vercel": "next dev",
     "start": "wrangler dev --config dist/server/wrangler.json",
+    "update:prices": "node scripts/update-prices.mjs",
     "lint": "oxlint",
     "format": "oxfmt"
   },

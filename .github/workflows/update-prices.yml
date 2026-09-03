@@ -1,0 +1,46 @@
+name: Actualizar precios de Natura Brasil
+
+on:
+  schedule:
+    # GitHub usa UTC: 11:00 UTC equivale a las 08:00 en Uruguay (UTC-3).
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-natura-prices
+  cancel-in-progress: false
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Descargar el catálogo
+        uses: actions/checkout@v7
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Actualizar precios con una conversión de 1 BRL = 10 UYU
+        run: node scripts/update-prices.mjs
+
+      - name: Guardar los cambios en main
+        shell: bash
+        run: |
+          if git diff --quiet -- app/catalog-data.ts; then
+            echo "No hubo cambios de precio."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/catalog-data.ts
+          git commit -m "Actualizar precios diarios de Natura Brasil"
+          git push origin HEAD:main
