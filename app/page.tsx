@@ -403,8 +403,10 @@ export default function Home() {
       </header>
 
       <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Categorías de productos">
-        {['Todos', ...categories.map((category) => category.name)].map((item) => (
-          <button key={item} onClick={() => chooseCategory(item)}>{item.toLocaleLowerCase('es')}</button>
+        {['Todos', ...categories.map((category) => category.name), 'Luz roja'].map((item) => (
+          item === 'Luz roja'
+            ? <a key={item} href="/categoria/luz-roja">luz roja</a>
+            : <button key={item} onClick={() => chooseCategory(item)}>{item.toLocaleLowerCase('es')}</button>
         ))}
       </nav>
 

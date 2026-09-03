@@ -11,6 +11,7 @@ const navItems = [
   ['rostro', '/categoria/rostro'],
   ['maquillaje', '/categoria/maquillaje'],
   ['infantil', '/categoria/infantil'],
+  ['luz roja', '/categoria/luz-roja'],
   ['hogar', '/categoria/hogar'],
   ['regalos', '/categoria/regalos'],
 ];
