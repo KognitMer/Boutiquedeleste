@@ -102,7 +102,7 @@ export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], pa
   ];
   const totalAmount = (subtotal + surcharge).toFixed(2);
   const siteUrl = getSiteUrl();
-  const externalReference = `NU-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
+  const externalReference = `BDE-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
 
   const order = await mercadoPagoRequest('/v1/orders', {
     method: 'POST',
@@ -113,7 +113,7 @@ export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], pa
       capture_mode: 'automatic_async',
       total_amount: totalAmount,
       external_reference: externalReference,
-      description: 'Pedido Natura Uruguay',
+      description: 'Pedido Boutique del Este',
       payer: { email: payerEmail },
       items,
       config: {

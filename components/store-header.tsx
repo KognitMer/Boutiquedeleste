@@ -31,7 +31,7 @@ export function StoreHeader() {
   }
 
   return <>
-    <div className="top-strip"><span>Entrega en 24 h en Maldonado y Punta del Este</span><span>Precios en pesos uruguayos</span><span>Stock sujeto a confirmación</span></div>
+    <div className="top-strip"><span>Envíos en un máximo de 48 h en Maldonado y Punta del Este</span><span>Precios en pesos uruguayos</span><span>Stock sujeto a confirmación</span></div>
     <header className="site-header">
       <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>☰</button>
       <a className="wordmark" href="/" aria-label="Boutique del Este, inicio">boutique<small>del este</small></a>

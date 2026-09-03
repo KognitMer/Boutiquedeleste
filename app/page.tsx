@@ -381,7 +381,7 @@ export default function Home() {
   return (
     <main>
       <div className="top-strip">
-        <span>Entrega en 24 h en Maldonado y Punta del Este</span>
+        <span>Envíos en un máximo de 48 h en Maldonado y Punta del Este</span>
         <span>Precios en pesos uruguayos</span>
         <span>Stock sujeto a confirmación</span>
       </div>
@@ -417,23 +417,23 @@ export default function Home() {
         <img src="/catalog/kaiak-21k.webp" alt="Perfume Kaiak disponible en Boutique del Este" />
         <div className="hero-scrim" />
         <div className="hero-copy">
-          <p>selección de belleza · Uruguay</p>
-          <h1>Tu boutique de belleza,<br /><em>cerca de vos.</em></h1>
-          <span>Productos elegidos para tu rutina, con atención personal y entrega coordinada.</span>
-          <button onClick={() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' })}>explorar productos</button>
+          <p>perfumería y cuidado personal · Uruguay</p>
+          <h1>Productos originales,<br /><em>cerca de vos.</em></h1>
+          <span>Perfumes, cuidado personal y regalos con precios en pesos uruguayos. Enviamos en un máximo de 48 horas en Maldonado y Punta del Este.</span>
+          <button onClick={() => document.querySelector('#productos')?.scrollIntoView({ behavior: 'smooth' })}>ver catálogo</button>
         </div>
         <div className="hero-stamp" aria-hidden="true"><span>DEL</span><strong>ESTE</strong></div>
       </section>
 
       <section className="benefits" aria-label="Beneficios de compra">
-        <article><Icon>◇</Icon><div><strong>Entrega en 24 horas</strong><span>Maldonado y Punta del Este</span></div></article>
+        <article><Icon>◇</Icon><div><strong>Envíos en hasta 48 horas</strong><span>Maldonado y Punta del Este</span></div></article>
         <article><Icon>◎</Icon><div><strong>Precios claros</strong><span>expresados en pesos uruguayos</span></div></article>
         <article><Icon>✦</Icon><div><strong>Selección cuidada</strong><span>productos originales de marcas elegidas</span></div></article>
         <article><Icon>⌂</Icon><div><strong>Atención cercana</strong><span>confirmamos disponibilidad al pedir</span></div></article>
       </section>
 
       <section className="category-section section-shell">
-        <div className="section-heading"><div><p>encontrá tu ritual</p><h2>¿Qué estás buscando?</h2></div><button onClick={() => chooseCategory('Todos')}>ver todo <span>→</span></button></div>
+        <div className="section-heading"><div><p>comprá por categoría</p><h2>¿Qué estás buscando?</h2></div><button onClick={() => chooseCategory('Todos')}>ver todo <span>→</span></button></div>
         <div className="category-grid">
           {categories.map((category) => (
             <a className={`category-card ${category.tone}`} key={category.name} href={`/categoria/${category.name.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ñ/g, 'n').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}>
@@ -484,14 +484,14 @@ export default function Home() {
       </section>
 
       <section className="story-banner section-shell">
-        <div className="story-art"><span>selección del este</span><b>Tu ritual</b></div>
-        <div className="story-copy"><p>una tienda a tu manera</p><h2>Elegí con calma.<br />Nosotros coordinamos el resto.</h2><span>Reunimos perfumería, maquillaje y cuidado personal en un solo lugar, con asesoramiento directo y entrega acordada.</span><a href="#productos">explorar la selección</a></div>
+        <div className="story-art"><span>boutique del este</span><b>Originales</b></div>
+        <div className="story-copy"><p>compras simples</p><h2>Elegí online.<br />Coordinamos la entrega.</h2><span>Encontrá perfumes, maquillaje, cuidado personal y regalos. También podés consultarnos por lámparas de luz roja.</span><a href="#productos">ver productos</a></div>
       </section>
 
       <section id="ekos-info" className="ekos-info section-shell" aria-labelledby="ekos-title">
         <div className="ekos-intro">
           <p>Natura Ekos</p>
-          <h2 id="ekos-title">La potencia de la Amazonía en tu rutina de cuidado</h2>
+          <h2 id="ekos-title">Productos Ekos para el cuerpo y el cabello</h2>
           <span>Ekos reúne productos para el cuerpo y el cabello elaborados con bioactivos de la biodiversidad amazónica. Cada línea aprovecha las propiedades de ingredientes como castaña, maracuyá, açaí, andiroba, cupuaçu, tukumá y murumuru.</span>
         </div>
         <div className="ekos-benefits">
@@ -503,7 +503,7 @@ export default function Home() {
       </section>
 
       <section className="newsletter service-callout">
-        <div><p>compra simple</p><h2>Armá tu bolsa y copiá el pedido</h2><span>Confirmamos disponibilidad y coordinamos la entrega en Maldonado o Punta del Este.</span></div>
+        <div><p>pedido por WhatsApp</p><h2>Armá tu bolsa y envianos el pedido</h2><span>Confirmamos la disponibilidad y coordinamos el envío en un máximo de 48 horas en Maldonado o Punta del Este.</span></div>
         <button onClick={() => setCartOpen(true)}>ver mi bolsa ({cartCount})</button>
       </section>
 
