@@ -17,19 +17,32 @@ const currency = new Intl.NumberFormat('es-UY', {
 });
 
 export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActionsProps) {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<'mercado-pago' | 'whatsapp' | null>(null);
   const [error, setError] = useState('');
   const surcharge = mercadoPagoSurcharge(subtotal);
   const paymentTotal = subtotal + surcharge;
+  const items = Object.entries(cart).map(([id, quantity]) => ({ id: Number(id), quantity }));
 
-  async function startPayment() {
-    if (!emailPattern.test(email.trim())) {
-      setError('Ingresá un correo válido para recibir la confirmación del pago.');
-      return;
+  function validCustomerDetails() {
+    if (name.trim().length < 2) {
+      setError('Ingresá tu nombre para emitir la orden de compra.');
+      return false;
     }
 
-    setLoading(true);
+    if (!emailPattern.test(email.trim())) {
+      setError('Ingresá un correo válido para recibir la orden de compra.');
+      return false;
+    }
+
+    return true;
+  }
+
+  async function startPayment() {
+    if (!validCustomerDetails()) return;
+
+    setLoading('mercado-pago');
     setError('');
 
     try {
@@ -37,11 +50,9 @@ export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActions
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          customerName: name.trim(),
           payerEmail: email.trim(),
-          items: Object.entries(cart).map(([id, quantity]) => ({
-            id: Number(id),
-            quantity,
-          })),
+          items,
         }),
       });
 
@@ -53,7 +64,38 @@ export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActions
       window.location.assign(result.checkoutUrl);
     } catch (checkoutError) {
       setError(checkoutError instanceof Error ? checkoutError.message : 'No pudimos iniciar el pago.');
-      setLoading(false);
+      setLoading(null);
+    }
+  }
+
+  async function sendWhatsAppOrder() {
+    if (!validCustomerDetails()) return;
+
+    setLoading('whatsapp');
+    setError('');
+
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customerName: name.trim(),
+          customerEmail: email.trim(),
+          items,
+        }),
+      });
+      const result = await response.json() as { orderNumber?: string; message?: string };
+      if (!response.ok || !result.orderNumber) {
+        throw new Error(result.message || 'No pudimos generar la orden de compra.');
+      }
+
+      const destination = new URL(whatsappUrl);
+      const message = destination.searchParams.get('text') || '';
+      destination.searchParams.set('text', `Orden de compra N.º ${result.orderNumber}\n\n${message}\n\nNombre: ${name.trim()}\nCorreo: ${email.trim()}`);
+      window.location.assign(destination.toString());
+    } catch (checkoutError) {
+      setError(checkoutError instanceof Error ? checkoutError.message : 'No pudimos enviar la orden de compra.');
+      setLoading(null);
     }
   }
 
@@ -63,7 +105,17 @@ export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActions
         <span>Recargo Mercado Pago ({MERCADO_PAGO_SURCHARGE_PERCENT}%) <b>{currency.format(surcharge)}</b></span>
         <strong>Total con Mercado Pago <b>{currency.format(paymentTotal)}</b></strong>
       </div>
-      <label htmlFor="checkout-email">Correo para la confirmación</label>
+      <label htmlFor="checkout-name">Nombre y apellido</label>
+      <input
+        id="checkout-name"
+        type="text"
+        autoComplete="name"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        placeholder="Tu nombre"
+        maxLength={100}
+      />
+      <label htmlFor="checkout-email">Correo para la orden de compra</label>
       <input
         id="checkout-email"
         type="email"
@@ -74,15 +126,15 @@ export function CheckoutActions({ cart, subtotal, whatsappUrl }: CheckoutActions
         placeholder="tu@email.com"
         aria-describedby="checkout-email-help"
       />
-      <small id="checkout-email-help">Mercado Pago lo utiliza para identificar y confirmar la compra.</small>
-      <button className="mercado-pago-button" type="button" onClick={startPayment} disabled={loading}>
-        {loading ? 'abriendo Mercado Pago…' : `pagar ${currency.format(paymentTotal)} con Mercado Pago`}
+      <small id="checkout-email-help">Recibirás por correo una orden numerada con el detalle de tu compra.</small>
+      <button className="mercado-pago-button" type="button" onClick={startPayment} disabled={loading !== null}>
+        {loading === 'mercado-pago' ? 'generando orden…' : `pagar ${currency.format(paymentTotal)} con Mercado Pago`}
       </button>
-      <a className="whatsapp-checkout" href={whatsappUrl} target="_blank" rel="noreferrer">
-        enviar pedido por WhatsApp
-      </a>
+      <button className="whatsapp-checkout" type="button" onClick={sendWhatsAppOrder} disabled={loading !== null}>
+        {loading === 'whatsapp' ? 'generando orden…' : 'confirmar y enviar por WhatsApp'}
+      </button>
       {error && <p className="checkout-error" role="alert">{error}</p>}
-      <small className="checkout-note">Pago protegido por Mercado Pago · Tarjetas de crédito y débito</small>
+      <small className="checkout-note">La orden también queda respaldada en el correo de Boutique del Este.</small>
     </div>
   );
 }
