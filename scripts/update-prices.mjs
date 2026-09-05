@@ -87,6 +87,38 @@ function findProductSchema(value, sku) {
   return null;
 }
 
+function isNormalPriceSpecification(specification) {
+  const priceType = String(
+    specification?.priceType ?? specification?.name ?? '',
+  ).toLowerCase();
+
+  return [
+    'listprice',
+    'list price',
+    'regularprice',
+    'regular price',
+    'originalprice',
+    'original price',
+    'fullprice',
+    'full price',
+    'msrp',
+    'suggestedretailprice',
+    'suggested retail price',
+    'preço regular',
+    'preco regular',
+    'preço de lista',
+    'preco de lista',
+  ].some((type) => priceType.includes(type));
+}
+
+function getSpecificationPrice(specification) {
+  const price = Number(
+    specification?.price ?? specification?.minPrice ?? specification?.value,
+  );
+
+  return Number.isFinite(price) && price > 0 && price < 10_000 ? price : null;
+}
+
 function extractPrice(html, sku) {
   const scripts = html.matchAll(
     /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
@@ -100,6 +132,20 @@ function extractPrice(html, sku) {
       const offers = Array.isArray(schema.offers)
         ? schema.offers
         : [schema.offers];
+
+      const specifications = [
+        schema.priceSpecification,
+        ...offers.map((offer) => offer?.priceSpecification),
+      ].flatMap((value) => (Array.isArray(value) ? value : [value]));
+
+      for (const specification of specifications) {
+        const normalPrice = isNormalPriceSpecification(specification)
+          ? specification
+          : null;
+        const price = getSpecificationPrice(normalPrice);
+        if (price !== null) return price;
+      }
+
       for (const offer of offers) {
         const price = Number(offer?.price ?? offer?.lowPrice);
         if (Number.isFinite(price) && price > 0 && price < 10_000) return price;
