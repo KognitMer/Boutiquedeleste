@@ -8947,7 +8947,7 @@ export const products: Product[] = [
     "brand": "Una",
     "name": "Perfume Una Nude 75 Ml",
     "category": "Perfumería",
-    "price": 2499,
+    "price": 3299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw13eac450/NATBRA-205933_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [

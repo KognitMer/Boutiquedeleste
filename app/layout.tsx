@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
+  icons: {
+    icon: '/FAVICON%20N.svg',
+    shortcut: '/FAVICON%20N.svg',
+    apple: '/FAVICON%20N.svg',
+  },
   keywords: [
     'perfumes en Uruguay',
     'cuidado personal',
