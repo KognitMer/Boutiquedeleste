@@ -89,7 +89,12 @@ function findProductSchema(value, sku) {
 
 function isNormalPriceSpecification(specification) {
   const priceType = String(
-    specification?.priceType ?? specification?.name ?? '',
+    specification?.priceType ??
+      specification?.name ??
+      specification?.['@type'] ??
+      specification?.label ??
+      specification?.description ??
+      '',
   ).toLowerCase();
 
   return [
@@ -111,9 +116,47 @@ function isNormalPriceSpecification(specification) {
   ].some((type) => priceType.includes(type));
 }
 
+function findNormalPrice(value) {
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const price = findNormalPrice(item);
+      if (price !== null) return price;
+    }
+    return null;
+  }
+
+  if (!value || typeof value !== 'object') return null;
+
+  const directPriceKeys = [
+    'listPrice',
+    'regularPrice',
+    'originalPrice',
+    'fullPrice',
+    'compareAtPrice',
+  ];
+  for (const key of directPriceKeys) {
+    const price = getSpecificationPrice(value[key]);
+    if (price !== null) return price;
+  }
+
+  if (isNormalPriceSpecification(value)) {
+    const price = getSpecificationPrice(value);
+    if (price !== null) return price;
+  }
+
+  for (const nested of Object.values(value)) {
+    const price = findNormalPrice(nested);
+    if (price !== null) return price;
+  }
+
+  return null;
+}
+
 function getSpecificationPrice(specification) {
   const price = Number(
-    specification?.price ?? specification?.minPrice ?? specification?.value,
+    typeof specification === 'object'
+      ? (specification.price ?? specification.minPrice ?? specification.value)
+      : specification,
   );
 
   return Number.isFinite(price) && price > 0 && price < 10_000 ? price : null;
@@ -133,18 +176,14 @@ function extractPrice(html, sku) {
         ? schema.offers
         : [schema.offers];
 
-      const specifications = [
+      const normalPrice = findNormalPrice(schema);
+      if (normalPrice !== null) return normalPrice;
+
+      const hasPriceSpecifications = [
         schema.priceSpecification,
         ...offers.map((offer) => offer?.priceSpecification),
-      ].flatMap((value) => (Array.isArray(value) ? value : [value]));
-
-      for (const specification of specifications) {
-        const normalPrice = isNormalPriceSpecification(specification)
-          ? specification
-          : null;
-        const price = getSpecificationPrice(normalPrice);
-        if (price !== null) return price;
-      }
+      ].some(Boolean);
+      if (hasPriceSpecifications) continue;
 
       for (const offer of offers) {
         const price = Number(offer?.price ?? offer?.lowPrice);
