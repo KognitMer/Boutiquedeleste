@@ -88,69 +88,38 @@ function findProductSchema(value, sku) {
   return null;
 }
 
-function isNormalPriceSpecification(specification) {
-  const priceType = String(
-    specification?.priceType ??
-      specification?.name ??
-      specification?.['@type'] ??
-      specification?.label ??
-      specification?.description ??
-      '',
-  ).toLowerCase();
-
-  return [
-    'listprice',
-    'list price',
-    'regularprice',
-    'regular price',
-    'originalprice',
-    'original price',
-    'fullprice',
-    'full price',
-    'msrp',
-    'suggestedretailprice',
-    'suggested retail price',
-    'preço regular',
-    'preco regular',
-    'preço de lista',
-    'preco de lista',
-  ].some((type) => priceType.includes(type));
-}
-
-function findNormalPrice(value) {
+function collectPriceCandidates(value, candidates = []) {
   if (Array.isArray(value)) {
     for (const item of value) {
-      const price = findNormalPrice(item);
-      if (price !== null) return price;
+      collectPriceCandidates(item, candidates);
     }
-    return null;
+    return candidates;
   }
 
-  if (!value || typeof value !== 'object') return null;
+  if (!value || typeof value !== 'object') return candidates;
 
-  const directPriceKeys = [
+  const priceKeys = [
+    'price',
+    'lowPrice',
+    'highPrice',
+    'minPrice',
+    'maxPrice',
     'listPrice',
     'regularPrice',
     'originalPrice',
     'fullPrice',
     'compareAtPrice',
   ];
-  for (const key of directPriceKeys) {
+  for (const key of priceKeys) {
     const price = getSpecificationPrice(value[key]);
-    if (price !== null) return price;
-  }
-
-  if (isNormalPriceSpecification(value)) {
-    const price = getSpecificationPrice(value);
-    if (price !== null) return price;
+    if (price !== null) candidates.push({ price, key });
   }
 
   for (const nested of Object.values(value)) {
-    const price = findNormalPrice(nested);
-    if (price !== null) return price;
+    collectPriceCandidates(nested, candidates);
   }
 
-  return null;
+  return candidates;
 }
 
 function getSpecificationPrice(specification) {
@@ -168,35 +137,26 @@ function extractPrice(html, sku) {
     /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
   );
 
+  const candidates = [];
+
   for (const match of scripts) {
     try {
       const schema = findProductSchema(JSON.parse(match[1]), sku);
       if (!schema) continue;
 
-      const offers = Array.isArray(schema.offers)
-        ? schema.offers
-        : [schema.offers];
-
-      const normalPrice = findNormalPrice(schema);
-      if (normalPrice !== null) {
-        return { price: normalPrice, source: 'normal-price' };
-      }
-
-      const hasPriceSpecifications = [
-        schema.priceSpecification,
-        ...offers.map((offer) => offer?.priceSpecification),
-      ].some(Boolean);
-      if (hasPriceSpecifications) continue;
-
-      for (const offer of offers) {
-        const price = Number(offer?.price ?? offer?.lowPrice);
-        if (Number.isFinite(price) && price > 0 && price < 10_000) {
-          return { price, source: 'offer-price-fallback' };
-        }
-      }
+      collectPriceCandidates(schema, candidates);
     } catch {
       // Algunas fichas incluyen otros bloques JSON-LD; se ignoran si son inválidos.
     }
+  }
+
+  if (candidates.length > 0) {
+    const highestPrice = Math.max(...candidates.map(({ price }) => price));
+    return {
+      price: highestPrice,
+      source: 'highest-published-price',
+      candidateCount: candidates.length,
+    };
   }
 
   throw new Error('la ficha no publicó un precio válido');
@@ -245,7 +205,7 @@ async function fetchBrazilPrice(sku) {
 }
 
 async function mapConcurrent(items, worker) {
-  const results = new Array(items.length);
+  const results = Array.from({ length: items.length });
   let nextIndex = 0;
 
   async function runWorker() {
@@ -302,7 +262,13 @@ const results = await mapConcurrent(products, async (product) => {
   try {
     const brlPrice = await fetchBrazilPrice(product.sku);
     const uyuPrice = Math.round(brlPrice.price * BRL_TO_UYU_RATE);
-    return { product, brlPrice: brlPrice.price, priceSource: brlPrice.source, uyuPrice };
+    return {
+      product,
+      brlPrice: brlPrice.price,
+      priceSource: brlPrice.source,
+      priceCandidates: brlPrice.candidateCount,
+      uyuPrice,
+    };
   } catch (error) {
     return {
       product,
@@ -324,14 +290,14 @@ if (AUDIT) {
   console.log('\nAuditoría de fuentes de precio:');
   for (const result of successful) {
     console.log(
-      `${result.priceSource === 'normal-price' ? 'OK' : 'REVISAR'} | SKU ${result.product.sku} | ${result.product.name} | fuente: ${result.priceSource} | $U ${result.uyuPrice}`,
+      `OK | SKU ${result.product.sku} | ${result.product.name} | fuente: ${result.priceSource} | candidatos: ${result.priceCandidates} | $U ${result.uyuPrice}`,
     );
   }
   for (const result of failed) {
     console.log(`ERROR | SKU ${result.product.sku} | ${result.product.name} | ${result.error}`);
   }
   console.log(
-    `\nResultado: ${successful.filter((result) => result.priceSource === 'normal-price').length} con precio normal identificado, ${successful.filter((result) => result.priceSource !== 'normal-price').length} para revisar y ${failed.length} con error.`,
+    `\nResultado: ${successful.length} con el precio publicado más alto seleccionado y ${failed.length} con error.`,
   );
 }
 
