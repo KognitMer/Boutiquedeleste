@@ -416,7 +416,9 @@ export default function Home() {
       </aside>
 
       <section id="inicio" className="hero catalog-hero" aria-label="Selección de belleza de Boutique del Este">
-        <img src="/catalog/kaiak-21k.webp" alt="Perfume Kaiak disponible en Boutique del Este" />
+        <a className="hero-product-link" href="/productos/169222" aria-label="Ver Serum Intensivo Multimanchas Chronos Derma 30 Ml">
+          <img src="https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwdaaaae58/Produtos/NATBRA-169222_1.jpg?sw=900&q=85" alt="Serum Intensivo Multimanchas Chronos Derma 30 Ml" />
+        </a>
         <div className="hero-scrim" />
         <div className="hero-copy">
           <p>perfumería y cuidado personal · Uruguay</p>
