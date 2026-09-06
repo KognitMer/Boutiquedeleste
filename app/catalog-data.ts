@@ -13,7 +13,7 @@ export type Product = {
   details: string[];
 };
 
-export const catalogLastUpdatedAt = "2026-09-03T05:09:05.054Z";
+export const catalogLastUpdatedAt = "2026-09-06T08:12:11.369Z";
 
 export const products: Product[] = [
   {
