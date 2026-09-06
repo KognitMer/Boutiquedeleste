@@ -14,9 +14,13 @@ const AUDIT = process.argv.includes('--audit');
 const limitArgument = process.argv.find((argument) =>
   argument.startsWith('--limit='),
 );
+const skuArgument = process.argv.find((argument) =>
+  argument.startsWith('--sku='),
+);
 const requestedLimit = limitArgument
   ? Number(limitArgument.split('=')[1])
   : undefined;
+const requestedSku = skuArgument ? skuArgument.split('=')[1] : undefined;
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, '..');
@@ -88,6 +92,26 @@ function findProductSchema(value, sku) {
   return null;
 }
 
+function findProductData(value, sku) {
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const match = findProductData(item, sku);
+      if (match) return match;
+    }
+    return null;
+  }
+
+  if (!value || typeof value !== 'object') return null;
+  if (String(value.sku ?? '').replace(/^NATBRA-/i, '') === sku) return value;
+
+  for (const nested of Object.values(value)) {
+    const match = findProductData(nested, sku);
+    if (match) return match;
+  }
+
+  return null;
+}
+
 function collectPriceCandidates(value, candidates = []) {
   if (Array.isArray(value)) {
     for (const item of value) {
@@ -134,17 +158,19 @@ function getSpecificationPrice(specification) {
 
 function extractPrice(html, sku) {
   const scripts = html.matchAll(
-    /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+    /<script[^>]*>([\s\S]*?)<\/script>/gi,
   );
 
   const candidates = [];
 
   for (const match of scripts) {
     try {
-      const schema = findProductSchema(JSON.parse(match[1]), sku);
-      if (!schema) continue;
+      const parsed = JSON.parse(match[1]);
+      const schema = findProductSchema(parsed, sku);
+      const productData = schema ?? findProductData(parsed, sku);
+      if (!productData) continue;
 
-      collectPriceCandidates(schema, candidates);
+      collectPriceCandidates(productData, candidates);
     } catch {
       // Algunas fichas incluyen otros bloques JSON-LD; se ignoran si son inválidos.
     }
@@ -154,8 +180,12 @@ function extractPrice(html, sku) {
     const highestPrice = Math.max(...candidates.map(({ price }) => price));
     return {
       price: highestPrice,
-      source: 'highest-published-price',
+      source:
+        candidates.length === 1 && candidates[0].key === 'price'
+          ? 'single-price-unverified'
+          : 'highest-published-price',
       candidateCount: candidates.length,
+      candidates,
     };
   }
 
@@ -252,9 +282,14 @@ function replaceCatalogTimestamp(source, timestamp) {
 const source = await readFile(catalogPath, 'utf8');
 const fullCatalog = parseCatalog(source);
 const products =
-  Number.isInteger(requestedLimit) && requestedLimit > 0
+  requestedSku
+    ? fullCatalog.filter((product) => product.sku === requestedSku)
+    : Number.isInteger(requestedLimit) && requestedLimit > 0
     ? fullCatalog.slice(0, requestedLimit)
     : fullCatalog;
+if (requestedSku && products.length === 0) {
+  throw new Error(`No se encontró el SKU ${requestedSku} en el catálogo.`);
+}
 console.log(`Consultando ${products.length} productos en Natura Brasil...`);
 
 let completed = 0;
@@ -267,6 +302,7 @@ const results = await mapConcurrent(products, async (product) => {
       brlPrice: brlPrice.price,
       priceSource: brlPrice.source,
       priceCandidates: brlPrice.candidateCount,
+      candidates: brlPrice.candidates,
       uyuPrice,
     };
   } catch (error) {
@@ -290,14 +326,17 @@ if (AUDIT) {
   console.log('\nAuditoría de fuentes de precio:');
   for (const result of successful) {
     console.log(
-      `OK | SKU ${result.product.sku} | ${result.product.name} | fuente: ${result.priceSource} | candidatos: ${result.priceCandidates} | $U ${result.uyuPrice}`,
+      `${result.priceSource === 'single-price-unverified' ? 'REVISAR' : 'OK'} | SKU ${result.product.sku} | ${result.product.name} | fuente: ${result.priceSource} | candidatos: ${result.priceCandidates} | $U ${result.uyuPrice}`,
     );
+    if (requestedSku) {
+      console.log(`  Valores: ${result.candidates.map(({ key, price }) => `${key}=${price}`).join(', ')}`);
+    }
   }
   for (const result of failed) {
     console.log(`ERROR | SKU ${result.product.sku} | ${result.product.name} | ${result.error}`);
   }
   console.log(
-    `\nResultado: ${successful.length} con el precio publicado más alto seleccionado y ${failed.length} con error.`,
+    `\nResultado: ${successful.filter((result) => result.priceSource === 'highest-published-price').length} con máximo verificable, ${successful.filter((result) => result.priceSource === 'single-price-unverified').length} para revisión manual y ${failed.length} con error.`,
   );
 }
 
@@ -311,7 +350,8 @@ if (!AUDIT && successRatio < MIN_SUCCESS_RATIO) {
   process.exitCode = 1;
 } else if (!AUDIT) {
   const changed = successful.filter(
-    ({ product, uyuPrice }) => product.price !== uyuPrice,
+    ({ product, uyuPrice, priceSource }) =>
+      priceSource !== 'single-price-unverified' && product.price !== uyuPrice,
   );
   let updatedSource = source;
 
