@@ -13,7 +13,7 @@ export type Product = {
   details: string[];
 };
 
-export const catalogLastUpdatedAt = "2026-09-03T05:09:05.054Z";
+export const catalogLastUpdatedAt = "2026-09-06T08:12:11.369Z";
 
 export const products: Product[] = [
   {
@@ -82,7 +82,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido en Gel Tododia Mora Roja y Jabuticaba 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 307,
+    "price": 509,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw7ba8d9ff/NATBRA-5894_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -142,7 +142,7 @@ export const products: Product[] = [
     "brand": "Biografia",
     "name": "Colonia Biografia Caminos femenino 100 ml",
     "category": "Perfumería",
-    "price": 1469,
+    "price": 2099,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwafbb18bf/NATBRA-9467_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -157,7 +157,7 @@ export const products: Product[] = [
     "brand": "Biografia",
     "name": "Colonia Biografia Caminos masculino 100 ml",
     "category": "Perfumería",
-    "price": 1469,
+    "price": 2099,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1d6e06c6/Produtos/NATBRA-9468_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -247,7 +247,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Esponja de maquillaje Color Blend",
     "category": "Maquillaje",
-    "price": 319,
+    "price": 399,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwac0f3c98/NATBRA-16641_1.jpg?sw=900&q=85",
     "description": "Maquillaje Natura para realzar tu estilo con una aplicación práctica.",
     "details": [
@@ -262,7 +262,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Desodorante Hidratante Corporal Perfumado Essencial 200 G",
     "category": "Cuerpo y baño",
-    "price": 1079,
+    "price": 1349,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe3f97ce9/NATBRA-16870_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -307,7 +307,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Desodorante Hidratante Perfumado Corporal Essencial Supreme 200g",
     "category": "Cuerpo y baño",
-    "price": 1079,
+    "price": 1349,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw76eb375d/NATBRA-16873_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -382,7 +382,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido en Gel Tododia Cereza y Avellana 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 307,
+    "price": 509,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd3cbee82/NATBRA-18978_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -442,7 +442,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Crema Desodorante Nutritivo para el Cuerpo Tododia Mora Roja y Jabuticaba 200 Ml",
     "category": "Cuerpo y baño",
-    "price": 569,
+    "price": 789,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw6e3436ae/NATBRA-23154_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -562,7 +562,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Repuesto Jabón Cremoso para As Manos Hierba Dulce 250 Ml",
     "category": "Cuerpo y baño",
-    "price": 239,
+    "price": 479,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw36da131e/NATBRA-28175_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -622,7 +622,7 @@ export const products: Product[] = [
     "brand": "Kriska",
     "name": "Colonia Kriska Femenino 100 Ml",
     "category": "Perfumería",
-    "price": 1189,
+    "price": 1699,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwb1e59a96/Produtos/NATBRA-41795_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -667,7 +667,7 @@ export const products: Product[] = [
     "brand": "Ilía",
     "name": "Perfume Ilia Femenino 50 Ml",
     "category": "Perfumería",
-    "price": 1399,
+    "price": 1999,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw42eafb9b/Produtos/PRODUTO/NATBRA-54522_1.png?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -727,7 +727,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Colonia Luna Absoluta Femenino 75 Ml",
     "category": "Perfumería",
-    "price": 1246,
+    "price": 1859,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwbc47550c/Produtos/NATBRA-56417_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1282,7 +1282,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Repuesto Aceite Bifásico Desodorante Corporal Ekos Tukuma 200 Ml",
     "category": "Cuerpo y baño",
-    "price": 639,
+    "price": 799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw349ec9b5/NATBRA-75505_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -1372,7 +1372,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Perfume Essencial Oud Femenino 100 Ml",
     "category": "Perfumería",
-    "price": 1739,
+    "price": 2899,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0a6fcdc7/Produtos/NATBRA-76425_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1402,7 +1402,7 @@ export const products: Product[] = [
     "brand": "Natura Hombre",
     "name": "Perfume Natura Hombre Sagaz 100 Ml",
     "category": "Perfumería",
-    "price": 1699,
+    "price": 2449,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd0298913/Produtos/PRODUTO/NATBRA-81951_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1417,7 +1417,7 @@ export const products: Product[] = [
     "brand": "Ilía",
     "name": "Perfume Ilia Secreto Femenino 50 Ml",
     "category": "Perfumería",
-    "price": 1499,
+    "price": 1999,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw3fe51d27/Produtos/PRODUTO/NATBRA-83314_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1432,7 +1432,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Gel Post Barba Sr N 75 G",
     "category": "Cuerpo y baño",
-    "price": 499,
+    "price": 629,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe43a6e2f/NATBRA-85389_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -1447,7 +1447,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Crema De Afeitar Espumante Sr N 80g",
     "category": "Cuerpo y baño",
-    "price": 399,
+    "price": 539,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw6e05d0aa/NATBRA-85400_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -1477,7 +1477,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido en Gel Tododia Romero y Salvia 300ml",
     "category": "Cuerpo y baño",
-    "price": 307,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw8a3ebc1a/NATBRA-86329_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -1522,7 +1522,7 @@ export const products: Product[] = [
     "brand": "Humor",
     "name": "Colonia Humor Proprio 75 Ml",
     "category": "Perfumería",
-    "price": 1319,
+    "price": 1649,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd190fb67/Produtos/NATBRA-86727_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1567,7 +1567,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Desodorante Nutritivo para el Cuerpo Tododia Mora Roja y Jabuticaba 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwca80dea7/NATBRA-87516_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -1582,7 +1582,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Crema Desodorante Nutritivo para el Cuerpo Tododia Mora Roja y Jabuticaba 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 549,
+    "price": 789,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1dc2c56f/NATBRA-88103_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -1597,7 +1597,7 @@ export const products: Product[] = [
     "brand": "Natura Hombre",
     "name": "Perfume Natura Hombre Coragio 100 Ml",
     "category": "Perfumería",
-    "price": 2299,
+    "price": 3299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw68595724/NATBRA-89834_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1702,7 +1702,7 @@ export const products: Product[] = [
     "brand": "Mamá y Bebé",
     "name": "Acondicionador Mamá y Bebé 200 Ml",
     "category": "Infantil",
-    "price": 383,
+    "price": 479,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw40045fc1/Produtos/PRODUTO/NATBRA-92793_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -1732,7 +1732,7 @@ export const products: Product[] = [
     "brand": "Mamá y Bebé",
     "name": "Jabón Mamá y Bebé 5 unidad De 100 G Cada",
     "category": "Infantil",
-    "price": 465,
+    "price": 519,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4341ba29/NATBRA-92795_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -1957,7 +1957,7 @@ export const products: Product[] = [
     "brand": "Humor",
     "name": "Colonia Humor Beija Eu 75 Ml",
     "category": "Perfumería",
-    "price": 1149,
+    "price": 1649,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwb51d21de/Produtos/NATBRA-95947_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -1972,7 +1972,7 @@ export const products: Product[] = [
     "brand": "Humor",
     "name": "Colonia Humor Me Beija 75 Ml",
     "category": "Perfumería",
-    "price": 1149,
+    "price": 1649,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwc6879a2b/Produtos/NATBRA-95949_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -2002,7 +2002,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Repuesto Desodorante Hidratante Corporal Perfumado Luna 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 669,
+    "price": 959,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd838797c/NATBRA-97168_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2062,7 +2062,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Repuesto Desodorante Hidratante Corporal Perfumado Luna Absoluta 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 669,
+    "price": 959,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa350578f/NATBRA-97172_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2257,7 +2257,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Nutritivo para el Cuerpo Tododia Ciruela y Flor De Vainilla 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 789,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw631f2ac9/NATBRA-100383_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2287,7 +2287,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido en Gel Tododia Ciruela y Flor De Vainilla 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 249,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa3ee9a1e/NATBRA-100528_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2302,7 +2302,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Desodorante Nutritivo para el Cuerpo Tododia Cereza y Avellana 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe491206f/NATBRA-100605_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2317,7 +2317,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Body Splash Colonia Tododia Ciruela y Flor De Vainilla 200 Ml",
     "category": "Perfumería",
-    "price": 675,
+    "price": 969,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwcfacc4f5/NATBRA-100679_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -2332,7 +2332,7 @@ export const products: Product[] = [
     "brand": "Faces",
     "name": "Duo Superbrilho Faces",
     "category": "Cuerpo y baño",
-    "price": 339,
+    "price": 449,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw10e34666/Produtos/NATBRA-101036_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2377,7 +2377,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Repuesto Shampoo para Cabello Lisos y Ondulados Naturé 250 Ml",
     "category": "Infantil",
-    "price": 260,
+    "price": 309,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw853bd937/NATBRA-102396_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -2407,7 +2407,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Repuesto Acondicionador para Cabello Lisos y Ondulados Naturé 250 Ml",
     "category": "Infantil",
-    "price": 295,
+    "price": 349,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw370b37ea/NATBRA-102398_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -2542,7 +2542,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Colonia Naturé Pula Corda 100 ml",
     "category": "Infantil",
-    "price": 699,
+    "price": 999,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwcc8ab41f/NATBRA-102412_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -2572,7 +2572,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Repuesto Jabón Líquido Naturé 250 Ml",
     "category": "Infantil",
-    "price": 199,
+    "price": 285,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw254e853a/NATBRA-102418_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -2602,7 +2602,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Repuesto Desodorante Hidratante Corporal Luna Confiante 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 535,
+    "price": 669,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwfa836554/NATBRA-102420_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -2632,7 +2632,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Perfume Essencial Unico Masculino 90 Ml",
     "category": "Perfumería",
-    "price": 2196,
+    "price": 2289,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwcb450d1e/Produtos/NATBRA-103348_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -2647,7 +2647,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Perfume Essencial Unico Femenino 90 Ml",
     "category": "Perfumería",
-    "price": 2196,
+    "price": 3229,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw2b8be703/Produtos/NATBRA-103349_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -2752,7 +2752,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia Cereza y Avellana crema corporal y repuesto",
     "category": "Regalos",
-    "price": 888,
+    "price": 1378,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa70d4f8f/NATBRA-106020_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -2887,7 +2887,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set de acondicionador y jabones en barra",
     "category": "Regalos",
-    "price": 1019,
+    "price": 1277,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dweed81f35/Produtos/NATBRA-108307_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -3022,7 +3022,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Shampoo Cabello y Cuerpo Kaiak Masculino 200 Ml",
     "category": "Cabello",
-    "price": 349,
+    "price": 429,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw2b170820/NATBRA-108876_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -3037,7 +3037,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Hidratante corporal Kaiak masculino 150 ml",
     "category": "Cuerpo y baño",
-    "price": 499,
+    "price": 649,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw83b5df9d/NATBRA-108877_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3052,7 +3052,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Desodorante Hidratante Corporal Kaiak Femenino 150 Ml",
     "category": "Cuerpo y baño",
-    "price": 389,
+    "price": 649,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe7336497/NATBRA-108878_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3082,7 +3082,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Spray Post Barba Kaiak 150 Ml",
     "category": "Cuerpo y baño",
-    "price": 599,
+    "price": 779,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4088ae7e/NATBRA-109482_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3187,7 +3187,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Crema para Peinar Multibeneficios Ekos Murumuru 150 Ml",
     "category": "Cabello",
-    "price": 329,
+    "price": 649,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw203da21d/Produtos/NATBRA-112770_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -3217,7 +3217,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Tonico Nocturno De Crescimento Ekos Pataua 30 Ml",
     "category": "Cuerpo y baño",
-    "price": 559,
+    "price": 799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw58edc2f4/Produtos/NATBRA-112776_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3337,7 +3337,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Jabón Líquido Cremoso para el Cuerpo Tododia Algodón 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 339,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5be03cdb/NATBRA-113403_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3352,7 +3352,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Jabón Líquido Cremoso para el Cuerpo Tododia Macadamia 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 509,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw9f6a090f/Produtos/NATBRA-113404_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3367,7 +3367,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido Cremoso para el Cuerpo Tododia Algodón 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 249,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw55904f28/NATBRA-113406_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3382,7 +3382,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido Cremoso para el Cuerpo Tododia Macadamia 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 307,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw540c2ed7/Produtos/NATBRA-113407_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3502,7 +3502,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Repuesto Desodorante Hidratante Corporal Luna Coragem 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 535,
+    "price": 959,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0ad9f168/NATBRA-115659_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3547,7 +3547,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Nocturno para el Cuerpo Tododia Toda Noche 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw39a092f2/NATBRA-121961_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3592,7 +3592,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Crema Nocturno para el Cuerpo Tododia Toda Noche 200 Ml",
     "category": "Cuerpo y baño",
-    "price": 569,
+    "price": 789,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw957f399d/NATBRA-121967_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3622,7 +3622,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Crema Nocturno para el Cuerpo Tododia Toda Noche 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 549,
+    "price": 789,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5af6bbe7/NATBRA-121970_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3682,7 +3682,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Aceite Fortalecedor Finalizador Ekos Pataua 60 Ml",
     "category": "Cuerpo y baño",
-    "price": 899,
+    "price": 999,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw321411a8/Produtos/NATBRA-122499_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -3772,7 +3772,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Spray De Ambientes Tododia Toda Noche 200 Ml",
     "category": "Hogar",
-    "price": 503,
+    "price": 629,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw38519941/NATBRA-125798_1.jpg?sw=900&q=85",
     "description": "Aroma y bienestar Natura para acompañar los espacios de tu hogar.",
     "details": [
@@ -3847,7 +3847,7 @@ export const products: Product[] = [
     "brand": "Una",
     "name": "Una Blush Perfume 75 Ml",
     "category": "Maquillaje",
-    "price": 2441,
+    "price": 3299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4a0dd86a/Produtos/PRODUTO/NATBRA-128756_2.jpg?sw=900&q=85",
     "description": "Maquillaje Natura para realzar tu estilo con una aplicación práctica.",
     "details": [
@@ -3997,7 +3997,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Agua Micelar Desmaquillante Suave Chronos Derma 150 Ml",
     "category": "Rostro",
-    "price": 629,
+    "price": 850,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw43f7c45d/Produtos/NATBRA-133503_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -4012,7 +4012,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Deo Colonia Ekos Ryo Chuva 75 Ml",
     "category": "Perfumería",
-    "price": 1399,
+    "price": 1999,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5354d91a/Produtos/NATBRA-133863_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -4042,7 +4042,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Crema Desodorante Nutritivo para el Cuerpo Tododia Ciruela y Flor De Vainilla 2 Unidades",
     "category": "Regalos",
-    "price": 899,
+    "price": 1578,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw81f64b13/NATBRA-133875_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -4057,7 +4057,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Multiprotetor antiedad Fps 50 Chronos 50 Ml",
     "category": "Rostro",
-    "price": 859,
+    "price": 1100,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw014bf95a/Produtos/PRODUTO/NATBRA-134189_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -4072,7 +4072,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Jabón en Barra Puro Vegetal Cremoso y Exfoliante Ekos 4 unidad De 100 G",
     "category": "Cuerpo y baño",
-    "price": 413,
+    "price": 459,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd99f34cb/Produtos/NATBRA-134574_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -4087,7 +4087,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Jabón en Barra Puro Vegetal Cremoso Ekos 4 unidad De 100 G",
     "category": "Cuerpo y baño",
-    "price": 434,
+    "price": 459,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw21c0417e/Produtos/NATBRA-134575_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -4117,7 +4117,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Esencia De Tratamiento Revitalizacao y Luminosidade Chronos Derma 100 Ml",
     "category": "Rostro",
-    "price": 1209,
+    "price": 1350,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1f20dfa2/Produtos/PRODUTO/NATBRA-135043_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -4147,7 +4147,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Jabón en Espuma Limpieza Suave Chronos Derma 150 Ml",
     "category": "Rostro",
-    "price": 539,
+    "price": 910,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0e9671cc/Produtos/NATBRA-135060_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -4162,7 +4162,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Fluido Bifásico Desmaquillante Intensivo Chronos Derma 150 Ml",
     "category": "Rostro",
-    "price": 659,
+    "price": 850,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw394a3c95/NATBRA-137976_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -4237,7 +4237,7 @@ export const products: Product[] = [
     "brand": "Una",
     "name": "Serum para Sobrancelhas Una 4 G",
     "category": "Cuerpo y baño",
-    "price": 699,
+    "price": 1399,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw80589966/Produtos/NATBRA-140742_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -4267,7 +4267,7 @@ export const products: Product[] = [
     "brand": "Natura Hombre",
     "name": "Tonico Capilar Anticaída Natura Hombre 100 Ml",
     "category": "Cabello",
-    "price": 727,
+    "price": 909,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwfef0f29a/Produtos/NATBRA-145489_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5182,7 +5182,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Repuesto Mascara Reconstrutora para Cabello Crespos Lumina 250 Ml",
     "category": "Cabello",
-    "price": 300,
+    "price": 599,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw97667ac0/NATBRA-148439_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5212,7 +5212,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Repuesto Acondicionador De Limpieza para Cabello Rizados y Crespos Lumina 300 Ml",
     "category": "Cabello",
-    "price": 251,
+    "price": 419,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw90974abe/NATBRA-148441_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5512,7 +5512,7 @@ export const products: Product[] = [
     "brand": "Natura Hombre",
     "name": "Crema para Afeitar Multifuncional Natura Hombre",
     "category": "Cuerpo y baño",
-    "price": 299,
+    "price": 599,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5522d8b4/NATBRA-151021_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -5587,7 +5587,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Gel De Bañel Energizante para el Cuerpo Tododia Energia 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 307,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw3ecbbea3/NATBRA-152283_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -5617,7 +5617,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Energizante Corporal 2 en 1 Tododia Energia 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw7f69fa34/NATBRA-152290_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -5647,7 +5647,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Crema Energizante Corporal 2 en 1 Tododia Energia 200 Ml",
     "category": "Cuerpo y baño",
-    "price": 341,
+    "price": 569,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw819e4ea3/NATBRA-152298_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -5767,7 +5767,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Acondicionador Nutritivo Tododia Durazno y Almendra 280 Ml",
     "category": "Cabello",
-    "price": 231,
+    "price": 289,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa241b67b/Produtos/NATBRA-154859_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5782,7 +5782,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Acondicionador Hidratante Tododia Manzana y Aloe Vera 280 Ml",
     "category": "Cabello",
-    "price": 231,
+    "price": 289,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1ee64233/Produtos/NATBRA-154860_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5797,7 +5797,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Acondicionador Reparador Tododia Flor De Cereza y Aguacate 280 Ml",
     "category": "Cabello",
-    "price": 231,
+    "price": 289,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw38792486/Produtos/NATBRA-154861_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5812,7 +5812,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Shampoo Reparador Tododia Flor De Cereza y Aguacate 300 Ml",
     "category": "Cabello",
-    "price": 223,
+    "price": 279,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa35a0fe3/Produtos/NATBRA-154865_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5842,7 +5842,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Shampoo Nutritivo Tododia Durazno y Almendra 300 Ml",
     "category": "Cabello",
-    "price": 223,
+    "price": 279,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe445f42b/Produtos/NATBRA-154867_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5857,7 +5857,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Repuesto Shampoo Hidratante Manzana Verde y Aloe Vera 300 Ml",
     "category": "Cabello",
-    "price": 223,
+    "price": 279,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa8ebf536/Produtos/NATBRA-154868_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -5962,7 +5962,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Colonia Kaiak Sonar Femenino 100 Ml",
     "category": "Perfumería",
-    "price": 1139,
+    "price": 1899,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwc9958971/Produtos/NATBRA-155608_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -5992,7 +5992,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema para Peinar Reparador Tododia Flor De Cereza y Aguacate 180 Ml",
     "category": "Cabello",
-    "price": 223,
+    "price": 279,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0012eaa9/Produtos/NATBRA-156234_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -6022,7 +6022,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema para Peinar Nutritivo Tododia Durazno y Almendra 180 Ml",
     "category": "Cabello",
-    "price": 223,
+    "price": 279,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw537dab28/Produtos/NATBRA-156236_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -6067,7 +6067,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Jabón Líquido Cremoso Corporal Bañel Nas Nuvens Tododia Toda Noche 300 Ml",
     "category": "Cuerpo y baño",
-    "price": 307,
+    "price": 384,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1fb201c8/NATBRA-159710_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -6112,7 +6112,7 @@ export const products: Product[] = [
     "brand": "Natura Hombre",
     "name": "Shampoo Anticaspa Natura Hombre 300 Ml",
     "category": "Cabello",
-    "price": 463,
+    "price": 579,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw693524ce/Produtos/NATBRA-160210_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -6397,7 +6397,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Essencial Atrai Femenino 100 Ml",
     "category": "Cuerpo y baño",
-    "price": 1679,
+    "price": 2799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwdcf047bf/NATBRA-165813_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -6472,7 +6472,7 @@ export const products: Product[] = [
     "brand": "Mamá y Bebé",
     "name": "Acondicionador Mamá y Bebé Cachinhos y Crespinhos 200 Ml",
     "category": "Infantil",
-    "price": 383,
+    "price": 479,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw411bb120/Produtos/NATBRA-166871_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -6637,7 +6637,7 @@ export const products: Product[] = [
     "brand": "Essencial",
     "name": "Essencial Sentir Femenino 100 Ml",
     "category": "Cuerpo y baño",
-    "price": 1679,
+    "price": 2799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe5398d96/Produtos/NATBRA-167756_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -6817,7 +6817,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Super Serum para Ojos Reductor De Arrugas y Flacidez Chronos Derma 15 Ml",
     "category": "Rostro",
-    "price": 1829,
+    "price": 2050,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd1c8ad1d/Produtos/NATBRA-169258_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -6847,7 +6847,7 @@ export const products: Product[] = [
     "brand": "Mamá y Bebé",
     "name": "Set Miniatura Mamá y Bebé",
     "category": "Regalos",
-    "price": 1060,
+    "price": 1329,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw24c9d4ac/NATBRA-169427_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -6892,7 +6892,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set de jabones Tododia Amor y Cariñel, 5 Unidades",
     "category": "Regalos",
-    "price": 389,
+    "price": 409,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw411bfe9f/NATBRA-170814_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -6937,7 +6937,7 @@ export const products: Product[] = [
     "brand": "Una",
     "name": "Pro Palette De Sombras Una",
     "category": "Cuerpo y baño",
-    "price": 1359,
+    "price": 1699,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw90184bd6/Produtos/NATBRA-171114_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7057,7 +7057,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Corporal Nutrición Radiante Tododia Jambo Rosa y Flor De Caju 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwcc91a733/Produtos/NATBRA-172100_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7117,7 +7117,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Repuesto Desodorante Hidratante Corporal Perfumado Luna Ilumina 200 G",
     "category": "Cuerpo y baño",
-    "price": 799,
+    "price": 1349,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw95958773/Produtos/NATBRA-173000_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7177,7 +7177,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Repuesto Desodorante Hidratante Corporal Perfumado Luna Intensa 200 G",
     "category": "Cuerpo y baño",
-    "price": 999,
+    "price": 1349,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw68203404/Produtos/NATBRA-173014_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7207,7 +7207,7 @@ export const products: Product[] = [
     "brand": "Ilía",
     "name": "Desodorante Hidratante Corporal Perfumado Ilia Jardim Secreto 200g",
     "category": "Cuerpo y baño",
-    "price": 1079,
+    "price": 1349,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw412d5de2/Produtos/NATBRA-173021_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7297,7 +7297,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema para Peinar Rizos Tododia Mora y Aceite De Coco 280 Ml",
     "category": "Cabello",
-    "price": 239,
+    "price": 299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4c66ce2c/NATBRA-173586_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -7342,7 +7342,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Acondicionador Rizos y Crespos Tododia Mora y Aceite De Coco 280 Ml",
     "category": "Cabello",
-    "price": 231,
+    "price": 289,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwb63c434b/NATBRA-173589_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -7507,7 +7507,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Desodorante Nutritivo para el Cuerpo Tododia Cereza Negra y Praline 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw7a9024e7/NATBRA-174595_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7552,7 +7552,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Body Splash Colonia Tododia Cereza Negra y Praline 200 Ml",
     "category": "Perfumería",
-    "price": 675,
+    "price": 969,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw8fce3fc0/NATBRA-174618_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -7582,7 +7582,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Balm Labial Tododia Cor Ciruela 2 7 G",
     "category": "Maquillaje",
-    "price": 215,
+    "price": 359,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwbfeb1206/NATBRA-174918_1.jpg?sw=900&q=85",
     "description": "Maquillaje Natura para realzar tu estilo con una aplicación práctica.",
     "details": [
@@ -7642,7 +7642,7 @@ export const products: Product[] = [
     "brand": "Natura Hombre",
     "name": "Perfume Natura Hombre Evolut.Io 100 Ml",
     "category": "Perfumería",
-    "price": 2441,
+    "price": 3299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw69cf4228/NATBRA-176285_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -7762,7 +7762,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Protector solar Facial Piel Mista A Oleosa Fps 50 Natura solar 50 Ml",
     "category": "Rostro",
-    "price": 599,
+    "price": 1029,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwece44203/NATBRA-176909_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -7777,7 +7777,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Protector solar Facial Piel Normal A Seca Fps 50 Natura solar 50 Ml",
     "category": "Rostro",
-    "price": 599,
+    "price": 1029,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1df24edf/NATBRA-176913_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -7792,7 +7792,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Protector solar Corporal Fps 50 Natura solar 200 Ml",
     "category": "Rostro",
-    "price": 1159,
+    "price": 1459,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw296d2cfa/NATBRA-176914_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -7852,7 +7852,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Gel Hidratante Post Sol Natura solar 120 G",
     "category": "Cuerpo y baño",
-    "price": 399,
+    "price": 699,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwf23461e0/NATBRA-178865_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -7882,7 +7882,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Sérum intensivo multimanchas Chronos 10 ml",
     "category": "Rostro",
-    "price": 659,
+    "price": 950,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw46162a72/Produtos/NATBRA-179453_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -7927,7 +7927,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Set Naturé Refis Cabello Lisos y Ondulados 2 unidad De 250 Ml",
     "category": "Regalos",
-    "price": 445,
+    "price": 638,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw47dac703/NATBRA-184469_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -8092,7 +8092,7 @@ export const products: Product[] = [
     "brand": "Sève",
     "name": "Crema Desodorante Corporal Perfumado Seve Amendoas y Orquidea Negra 200 G",
     "category": "Cuerpo y baño",
-    "price": 1129,
+    "price": 1199,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dweca7d377/Produtos/NATBRA-189566_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8152,7 +8152,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Jabón en Po Enzimatico Limpieza Uniformizadora Chronos Derma 50 G",
     "category": "Rostro",
-    "price": 799,
+    "price": 910,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd79f27a9/Produtos/NATBRA-190899_1.jpg?sw=900&q=85",
     "description": "Cuidado facial Natura pensado para complementar tu rutina diaria.",
     "details": [
@@ -8212,7 +8212,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Necessaire Bem Estar Ao Sol Natura solar 1 Unidad",
     "category": "Cuerpo y baño",
-    "price": 607,
+    "price": 759,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw04f0fb34/Produtos/NATBRA-195116_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8242,7 +8242,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Bolsa Premium Gratidao Crer para Ver 1 Unidad",
     "category": "Cuerpo y baño",
-    "price": 129,
+    "price": 140,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw13784326/Produtos/NATBRA-195640_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8257,7 +8257,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Garrafa Crer para Ver",
     "category": "Cuerpo y baño",
-    "price": 269,
+    "price": 309,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw98411582/NATBRA-195641_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8287,7 +8287,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Duo Cadernos Crer para Ver",
     "category": "Cuerpo y baño",
-    "price": 247,
+    "price": 309,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw516dd73a/NATBRA-195644_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8302,7 +8302,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Acondicionador Detox Tododia Té De Menta y Jengibre 280 Ml",
     "category": "Cabello",
-    "price": 231,
+    "price": 289,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw2709e389/Produtos/NATBRA-196323_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -8332,7 +8332,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Shampoo Detox Tododia Té De Menta y Jengibre 300 Ml",
     "category": "Cabello",
-    "price": 223,
+    "price": 279,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwf319ff84/Produtos/NATBRA-196327_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -8392,7 +8392,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Antitranspirante en crema Tododia Piel Uniforme 50 g",
     "category": "Cuerpo y baño",
-    "price": 199,
+    "price": 239,
     "image": "https://production.na01.natura.com/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/produto-joia/background/desktop/199376.jpg",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8407,7 +8407,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Desodorante Antitranspirante en Crema Hierba Dulce 50g",
     "category": "Cuerpo y baño",
-    "price": 239,
+    "price": 478,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw9faff0ba/Produtos/NATBRA-199377_1.png?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -8962,7 +8962,7 @@ export const products: Product[] = [
     "brand": "Una",
     "name": "Pro Palette De Sombras Una Nude 2c 7 G",
     "category": "Cuerpo y baño",
-    "price": 1399,
+    "price": 1699,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw02cd5c19/NATBRA-205934_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9037,7 +9037,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Repuesto Crema Desodorante Nutritivo para el Cuerpo Tododia Frutilla y Vainilla Dorada 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 471,
+    "price": 589,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw935e3045/Produtos/NATBRA-206230_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9067,7 +9067,7 @@ export const products: Product[] = [
     "brand": "Una",
     "name": "Mascara para Pestañas Volume Marrom Una 7 G",
     "category": "Maquillaje",
-    "price": 799,
+    "price": 969,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5b835656/NATBRA-206730_1.jpg?sw=900&q=85",
     "description": "Maquillaje Natura para realzar tu estilo con una aplicación práctica.",
     "details": [
@@ -9112,7 +9112,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia de tres body splash miniatura",
     "category": "Regalos",
-    "price": 1099,
+    "price": 1299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw2d524cdb/Produtos/NATBRA-209219_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -9142,7 +9142,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Shampoo estimulante Lumina 300 ml",
     "category": "Cabello",
-    "price": 419,
+    "price": 569,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw15470cc9/Produtos/NATBRA-210525_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -9157,7 +9157,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Acondicionador fortificante Lumina 300 ml",
     "category": "Cabello",
-    "price": 449,
+    "price": 599,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw8925c1f3/Produtos/NATBRA-210527_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -9172,7 +9172,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Máscara acondicionadora antiebre Lumina 250 ml",
     "category": "Cabello",
-    "price": 599,
+    "price": 799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1e99a708/Produtos/NATBRA-210529_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -9187,7 +9187,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Sérum nocturno anticaída Lumina 100 ml",
     "category": "Cuerpo y baño",
-    "price": 699,
+    "price": 969,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw18e1d3eb/Produtos/NATBRA-210531_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9322,7 +9322,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Crema Hidratante para As Manos Ekos Vainilla Amazónica 75 G",
     "category": "Cuerpo y baño",
-    "price": 419,
+    "price": 599,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw72e782bd/Produtos/NATBRA-216412_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9337,7 +9337,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Repuesto Crema Desodorante Hidratante para el Cuerpo Ekos Vainilla Amazónica 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 489,
+    "price": 699,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw097b4bdd/Produtos/NATBRA-216414_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9352,7 +9352,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Crema Desodorante Hidratante para el Cuerpo Ekos Vainilla Amazónica 400 Ml",
     "category": "Cuerpo y baño",
-    "price": 699,
+    "price": 899,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw183be099/Produtos/NATBRA-216416_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9397,7 +9397,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Máscara de pestañas Megafantástica 7 ml",
     "category": "Maquillaje",
-    "price": 419,
+    "price": 569,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd8b44342/Produtos/NATBRA-216706_1.jpg?sw=900&q=85",
     "description": "Maquillaje Natura para realzar tu estilo con una aplicación práctica.",
     "details": [
@@ -9412,7 +9412,7 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Set Lumina Anticaspa 2 Productos",
     "category": "Regalos",
-    "price": 1299,
+    "price": 1538,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw779a0402/NATBRA-217196_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -9427,7 +9427,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Jabón en Barra Puro Vegetal Cremoso Ekos Cacau 4 unidad De 100 G",
     "category": "Cuerpo y baño",
-    "price": 434,
+    "price": 459,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwff6c9a18/NATBRA-217742_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9532,27 +9532,12 @@ export const products: Product[] = [
     "brand": "Faces",
     "name": "Mascara para Pestañas y Sobrancelhas Incolor Faces 7ml",
     "category": "Maquillaje",
-    "price": 419,
+    "price": 499,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwcebaebe7/Produtos/NATBRA-220914_1.jpg?sw=900&q=85",
     "description": "Maquillaje Natura para realzar tu estilo con una aplicación práctica.",
     "details": [
       "Código Natura 220914",
       "Presentación: 7ml",
-      "Disponibilidad sujeta a confirmación"
-    ]
-  },
-  {
-    "id": 220919,
-    "sku": "220919",
-    "brand": "Ekos",
-    "name": "Crema Desodorante Hidratante para el Cuerpo Ekos Cacau 400 Ml",
-    "category": "Cuerpo y baño",
-    "price": 899,
-    "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw49fba84f/NATBRA-220919_1.jpg?sw=900&q=85",
-    "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
-    "details": [
-      "Código Natura 220919",
-      "Presentación: 400 Ml",
       "Disponibilidad sujeta a confirmación"
     ]
   },
@@ -9607,7 +9592,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Colonia Ekos Frescor Maracuyá Natureza Dos Sonhos 150 Ml",
     "category": "Infantil",
-    "price": 899,
+    "price": 1299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwca7a6938/Produtos/NATBRA-222447_1.jpg?sw=900&q=85",
     "description": "Cuidado suave Natura pensado para bebés, niñas y niños.",
     "details": [
@@ -9622,27 +9607,12 @@ export const products: Product[] = [
     "brand": "Lumina",
     "name": "Escova Massageadora para Couro Cabeludo Lumina",
     "category": "Cuerpo y baño",
-    "price": 699,
+    "price": 799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwc22d778d/Produtos/NATBRA-224018_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
       "Código Natura 224018",
       "Presentación según catálogo",
-      "Disponibilidad sujeta a confirmación"
-    ]
-  },
-  {
-    "id": 224496,
-    "sku": "224496",
-    "brand": "Ekos",
-    "name": "Repuesto Crema Desodorante Hidratante para el Cuerpo Ekos Cacau 400 Ml",
-    "category": "Cuerpo y baño",
-    "price": 699,
-    "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwfb297751/NATBRA-224496_1.jpg?sw=900&q=85",
-    "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
-    "details": [
-      "Código Natura 224496",
-      "Presentación: 400 Ml",
       "Disponibilidad sujeta a confirmación"
     ]
   },
@@ -9667,7 +9637,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Case Organizador para Notebook Crer para Ver 1 Unidad",
     "category": "Cuerpo y baño",
-    "price": 699,
+    "price": 799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dweb97443f/NATBRA-224725_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9682,7 +9652,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Bolsa sustentable Natura",
     "category": "Regalos",
-    "price": 599,
+    "price": 659,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw29a5f68b/Produtos/NATBRA-224727_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -9727,7 +9697,7 @@ export const products: Product[] = [
     "brand": "Chronos Derma",
     "name": "Set Serum Chronos Intensivo Multimanchas con Repuesto 30 Ml",
     "category": "Regalos",
-    "price": 2699,
+    "price": 3440,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw12ed7801/Produtos/NATBRA-226588_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -9742,7 +9712,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Lata Kaiak 30 Anos 1 Unidad",
     "category": "Cuerpo y baño",
-    "price": 399,
+    "price": 499,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw81032af9/Produtos/NATBRA-228003_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9757,7 +9727,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Colonia Kaiak 21k Masculino 100 Ml",
     "category": "Perfumería",
-    "price": 1349,
+    "price": 1899,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw88b3df97/Produtos/NATBRA-228528_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -9802,7 +9772,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Jabón en Barra Puro Vegetal Cremoso Ekos Vainilla Amazónica 4 unidad. De 100 G",
     "category": "Cuerpo y baño",
-    "price": 434,
+    "price": 459,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw2c5e98fe/Produtos/NATBRA-235241_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -9847,7 +9817,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Body Splash Tododia Nectar De Miel 200 Ml",
     "category": "Perfumería",
-    "price": 775,
+    "price": 969,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1590b620/Produtos/NATBRA-237757_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -10027,7 +9997,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Set Crema Hidratante para As Manos Ekos Castaña 3 unidad De 40 G",
     "category": "Regalos",
-    "price": 838,
+    "price": 1257,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwf2078c46/Produtos/NATBRA-241046_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10042,7 +10012,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Eau De Parfum Ekos Fava 50 Ml",
     "category": "Perfumería",
-    "price": 3119,
+    "price": 3899,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw017009fe/Produtos/NATBRA-241317_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -10057,7 +10027,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Repuesto Aceite Trifásico Desodorante Corporal Ekos Pitanga 200ml",
     "category": "Cuerpo y baño",
-    "price": 549,
+    "price": 799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1d7e77c8/Produtos/NATBRA-242813_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -10072,7 +10042,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Desodorante Hidratante Crema Corporal Antiatrito Kaiak 21k 100 Ml",
     "category": "Cuerpo y baño",
-    "price": 399,
+    "price": 499,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw9edfcdba/Produtos/NATBRA-247692_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -10087,7 +10057,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia acondicionador reparador y repuesto",
     "category": "Regalos",
-    "price": 468,
+    "price": 668,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw916bd17f/Produtos/NATBRA-248606_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10102,7 +10072,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia shampoo reparador y repuesto",
     "category": "Regalos",
-    "price": 448,
+    "price": 638,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa9450a45/Produtos/NATBRA-248607_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10117,7 +10087,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia crema para peinar y repuesto",
     "category": "Regalos",
-    "price": 448,
+    "price": 638,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwa528d157/Produtos/NATBRA-248615_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10132,7 +10102,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Jabón Líquido Corporal Masculino Kaiak 21k 100 Ml",
     "category": "Cuerpo y baño",
-    "price": 249,
+    "price": 329,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw8b0aa896/Produtos/NATBRA-248628_1.jpg?sw=900&q=85",
     "description": "Cuidado corporal Natura para una piel limpia, hidratada y confortable.",
     "details": [
@@ -10147,7 +10117,7 @@ export const products: Product[] = [
     "brand": "Humor",
     "name": "Set de fragancias Humor Mood Boosters",
     "category": "Regalos",
-    "price": 2397,
+    "price": 2997,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw360d55f0/Produtos/NATBRA-249319_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10162,7 +10132,7 @@ export const products: Product[] = [
     "brand": "Ekos",
     "name": "Ekos Frescor Deo Colonia Vainilla Amazónica 150 Ml",
     "category": "Perfumería",
-    "price": 949,
+    "price": 1299,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw03ef3bf3/Produtos/NATBRA-250231_1.jpg?sw=900&q=85",
     "description": "Fragancia Natura para sumar frescura y personalidad a tu rutina.",
     "details": [
@@ -10177,7 +10147,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Set infantil Naturé con sombrero bucket",
     "category": "Regalos",
-    "price": 1499,
+    "price": 1799,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1071bf56/Produtos/NATBRA-252879_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10192,7 +10162,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Set infantil Naturé Corre Corre",
     "category": "Regalos",
-    "price": 999,
+    "price": 1427,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0e54fa62/Produtos/NATBRA-252883_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10207,7 +10177,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Set Naturé para cabello rizado y crespo",
     "category": "Regalos",
-    "price": 1249,
+    "price": 1837,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw4fa9e4c5/Produtos/NATBRA-252884_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10222,7 +10192,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Set Naturé para cabello liso y ondulado",
     "category": "Regalos",
-    "price": 1249,
+    "price": 1837,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw60a1f52a/Produtos/NATBRA-252885_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10237,7 +10207,7 @@ export const products: Product[] = [
     "brand": "Luna",
     "name": "Set de regalo Luna Girl",
     "category": "Regalos",
-    "price": 1199,
+    "price": 1357,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw25eec48a/Produtos/NATBRA-252886_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10252,7 +10222,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set de regalo infantil con Colonia y shampoo",
     "category": "Regalos",
-    "price": 1199,
+    "price": 1295,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw5f98f222/Produtos/NATBRA-252887_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10267,7 +10237,7 @@ export const products: Product[] = [
     "brand": "Kaiak",
     "name": "Set infantil Kaiak Vibe",
     "category": "Regalos",
-    "price": 999,
+    "price": 1194,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dweddfdfe1/Produtos/NATBRA-252890_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10282,7 +10252,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Exfoliante capilar pre-shampoo 70 g",
     "category": "Cabello",
-    "price": 519,
+    "price": 699,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0de40d7d/Produtos/NATBRA-255761_1.jpg?sw=900&q=85",
     "description": "Cuidado capilar Natura para limpiar, tratar y proteger el cabello.",
     "details": [
@@ -10297,7 +10267,7 @@ export const products: Product[] = [
     "brand": "Naturé",
     "name": "Set infantil Naturé con mochila",
     "category": "Regalos",
-    "price": 2699,
+    "price": 2908,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe518c11e/Produtos/NATBRA-260169_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10312,7 +10282,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Liso+Liso Tododia 3 Productos",
     "category": "Regalos",
-    "price": 999,
+    "price": 1197,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw1fe19cd3/Produtos/NATBRA-261234_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10327,7 +10297,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set de acondicionador suave y repuesto",
     "category": "Regalos",
-    "price": 698,
+    "price": 1048,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwd57bf64f/Produtos/NATBRA-262775_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10342,7 +10312,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set de shampoo equilibrante y repuesto",
     "category": "Regalos",
-    "price": 668,
+    "price": 988,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw0ff5e400/Produtos/NATBRA-262778_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10357,7 +10327,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set de shampoo y repuesto 300 ml",
     "category": "Regalos",
-    "price": 728,
+    "price": 1058,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwe98306ee/Produtos/NATBRA-263190_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10372,7 +10342,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set de acondicionador y repuesto 300 ml",
     "category": "Regalos",
-    "price": 758,
+    "price": 1108,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwf1ddb670/Produtos/NATBRA-263191_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10417,7 +10387,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia de 5 jabones surtidos",
     "category": "Regalos",
-    "price": 1149,
+    "price": 1396,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwb42d94ca/Produtos/NATBRA-268171_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10432,7 +10402,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia de 5 jabones vegetales surtidos",
     "category": "Regalos",
-    "price": 609,
+    "price": 698,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw46a9a80d/Produtos/NATBRA-268172_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10447,7 +10417,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia jabón líquido en gel y repuesto",
     "category": "Regalos",
-    "price": 558,
+    "price": 893,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw251949cf/Produtos/NATBRA-268178_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10462,7 +10432,7 @@ export const products: Product[] = [
     "brand": "Tododia",
     "name": "Set Tododia crema corporal y repuesto 400 ml",
     "category": "Regalos",
-    "price": 1028,
+    "price": 1598,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw04701c47/Produtos/NATBRA-270022_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10477,7 +10447,7 @@ export const products: Product[] = [
     "brand": "Natura",
     "name": "Set Natura bolsa sustentable y llavero",
     "category": "Regalos",
-    "price": 699,
+    "price": 808,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw03477370/Produtos/NATBRA-271289_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10492,7 +10462,7 @@ export const products: Product[] = [
     "brand": "Mamá y Bebé",
     "name": "Set de regalo Mamá y Bebé Relax",
     "category": "Regalos",
-    "price": 1699,
+    "price": 2297,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dw23f6c244/Produtos/NATBRA-276734_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [
@@ -10507,7 +10477,7 @@ export const products: Product[] = [
     "brand": "Mamá y Bebé",
     "name": "Set Mamá y Bebé con neceser",
     "category": "Regalos",
-    "price": 2549,
+    "price": 3168,
     "image": "https://production.na01.natura.com/dw/image/v2/BFKR_PRD/on/demandware.static/-/Sites-natura-br-storefront-catalog/default/dwcc9bac8a/Produtos/NATBRA-276735_1.jpg?sw=900&q=85",
     "description": "Una selección Natura lista para regalar o disfrutar en conjunto.",
     "details": [

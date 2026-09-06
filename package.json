@@ -13,7 +13,8 @@
     "dev:vercel": "next dev",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "start:vps": "next start",
-    "update:prices": "node scripts/update-prices.mjs",
+    "prices:export": "node scripts/manage-prices.mjs export",
+    "prices:import": "node scripts/manage-prices.mjs import",
     "lint": "oxlint",
     "format": "oxfmt"
   },

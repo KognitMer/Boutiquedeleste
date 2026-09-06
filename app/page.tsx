@@ -414,9 +414,9 @@ export default function Home() {
         <strong>Tienda independiente</strong>
         <span>Comercializamos productos originales de marcas seleccionadas. No somos el sitio oficial de Natura ni de Avon.</span>
       </aside>
+      <div className="shipping-notice">Maldonado y Punta del Este: entrega en hasta 48 h · Interior: despachamos en hasta 48 h por UES o Correo Uruguayo</div>
 
       <section id="inicio" className="hero catalog-hero" aria-label="Selección de belleza de Boutique del Este">
-        <img src="/catalog/kaiak-21k.webp" alt="Perfume Kaiak disponible en Boutique del Este" />
         <div className="hero-scrim" />
         <div className="hero-copy">
           <p>perfumería y cuidado personal · Uruguay</p>
