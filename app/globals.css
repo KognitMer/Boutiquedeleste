@@ -43,10 +43,10 @@ a { color: inherit; text-decoration: none; }
 .brand-disclaimer strong { padding: 5px 9px; border-radius: 99px; background: var(--orange); color: var(--ink); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .hero { height: clamp(410px, 41vw, 590px); min-height: 410px; position: relative; overflow: hidden; background: #cc7f64; }
 .hero > img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.catalog-hero { background: radial-gradient(circle at 78% 38%, #fff7bd 0%, #f5cd43 37%, #e2ad13 72%, #c78e00 100%); }
+.catalog-hero { background: radial-gradient(circle at 78% 38%, #fff8df 0%, #f7e7ae 42%, #edd9a2 74%, #dfc98e 100%); }
 .catalog-hero:before { content: ''; position: absolute; width: 48vw; height: 48vw; min-width: 520px; min-height: 520px; right: -11vw; top: -19vw; border: 1px solid #24231d35; border-radius: 50%; }
 .catalog-hero > img { width: 46%; margin-left: auto; object-fit: contain; object-position: center; mix-blend-mode: normal; filter: drop-shadow(0 26px 30px #6b4b0040); }
-.hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, #f7d553 0%, #f7d553d9 43%, transparent 72%); }
+.hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, #f8e9b8 0%, #f8e9b8d9 43%, transparent 72%); }
 .hero-copy { position: absolute; top: 50%; left: max(30px, calc((100vw - 1280px)/2)); transform: translateY(-48%); color: var(--ink); }
 .hero-copy p, .section-heading p, .story-copy p, .newsletter p { margin: 0 0 10px; color: inherit; font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
 .hero-copy h1 { margin: 0 0 17px; font: 600 clamp(38px, 4.6vw, 67px)/1.02 var(--serif); letter-spacing: -.04em; }
@@ -125,11 +125,11 @@ a { color: inherit; text-decoration: none; }
 .empty-state { min-height: 350px; display: grid; place-items: center; align-content: center; gap: 9px; background: var(--cream); text-align: center; }
 .empty-state > span { color: var(--orange); font-size: 39px; }.empty-state h3 { margin: 0; font: 600 25px var(--serif); }.empty-state p { margin: 0; color: var(--muted); font-size: 12px; }.empty-state button, .empty-cart button { margin-top: 7px; border: 0; background: var(--orange); color: white; border-radius: 3px; padding: 11px 18px; font-size: 10px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
 .story-banner { display: grid; grid-template-columns: 52% 48%; padding-bottom: 85px; }
-.story-art { min-height: 390px; padding: 34px; background: linear-gradient(140deg, #25241e, #55513f); color: #fff7d0; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.story-art { min-height: 390px; padding: 34px; background: linear-gradient(140deg, #d8c9a6, #b6b39d); color: #3d3a31; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
 .story-art:before, .story-art:after { content: ''; position: absolute; border: 1px solid #ffffff46; border-radius: 50% 5% 50% 5%; transform: rotate(29deg); }
 .story-art:before { width: 360px; height: 220px; right: -70px; top: 70px; }.story-art:after { width: 260px; height: 390px; left: 30px; bottom: -190px; }
 .story-art span { text-transform: uppercase; font-size: 9px; letter-spacing: .18em; z-index: 1; }.story-art b { font: italic 600 clamp(58px, 7vw, 88px)/.92 var(--serif); z-index: 1; align-self: center; margin-bottom: 70px; text-align: center; }
-.story-copy { padding: clamp(40px, 6vw, 90px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; background: #fff0aa; color: var(--ink); }
+.story-copy { padding: clamp(40px, 6vw, 90px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; background: #f5e7c7; color: var(--ink); }
 .story-copy h2 { margin: 0 0 20px; font: 600 clamp(29px, 3.3vw, 46px)/1.1 var(--serif); letter-spacing: -.035em; }.story-copy > span { max-width: 440px; color: #625c48; font-size: 13px; line-height: 1.7; }.story-copy button, .story-copy a { margin-top: 26px; background: var(--ink); color: #fff9df; }
 .ekos-info { margin-bottom: 85px; padding-top: 58px; padding-bottom: 58px; background: #f0f4ef; color: #284334; }
 .ekos-intro { max-width: 780px; margin: 0 auto 42px; text-align: center; }
