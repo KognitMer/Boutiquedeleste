@@ -9,6 +9,7 @@ const csvPath = path.join(projectDirectory, 'catalog-prices.csv');
 const command = process.argv[2] ?? 'export';
 const inputArgument = process.argv.find((argument) => argument.startsWith('--input='));
 const dryRun = process.argv.includes('--dry-run');
+const strict = process.argv.includes('--strict');
 
 function parseCatalog(source) {
   const marker = 'export const products: Product[] = ';
@@ -104,6 +105,7 @@ if (command === 'export') {
   const rows = parseCsv(await readFile(inputPath, 'utf8'));
   const productsBySku = new Map(products.map((product) => [product.sku, product]));
   const seen = new Set();
+  let excelOnly = 0;
   let updatedSource = source;
   let changes = 0;
 
@@ -111,11 +113,36 @@ if (command === 'export') {
     if (seen.has(row.sku)) throw new Error(`SKU duplicado: ${row.sku}.`);
     seen.add(row.sku);
     const product = productsBySku.get(row.sku);
-    if (!product) throw new Error(`El SKU ${row.sku} no existe en el catálogo.`);
+    if (!product) {
+      if (strict) {
+        excelOnly += 1;
+        continue;
+      }
+      throw new Error(`El SKU ${row.sku} no existe en el catálogo.`);
+    }
     if (product.price !== row.price) {
       updatedSource = replaceProductPrice(updatedSource, product, row.price);
       changes += 1;
     }
+  }
+
+  if (strict) {
+    const importedSkus = new Set(rows.map((row) => row.sku));
+    const retainedProducts = products.filter((product) => importedSkus.has(product.sku));
+    const removedProducts = products.length - retainedProducts.length;
+    const marker = 'export const products: Product[] = ';
+    const arrayStart = source.indexOf('[', source.indexOf(marker) + marker.length);
+    const arrayEnd = source.lastIndexOf('];');
+    updatedSource = source.slice(0, arrayStart) + JSON.stringify(
+      retainedProducts.map((product) => {
+        const imported = rows.find((row) => row.sku === product.sku);
+        return { ...product, price: imported.price };
+      }),
+      null,
+      2,
+    ) + source.slice(arrayEnd + 1);
+    console.log(`Productos conservados: ${retainedProducts.length}. Productos retirados: ${removedProducts}.`);
+    console.log(`Productos solo en Excel (ignorados): ${excelOnly}.`);
   }
 
   console.log(`Filas revisadas: ${rows.length}. Cambios detectados: ${changes}.`);
