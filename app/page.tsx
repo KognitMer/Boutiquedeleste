@@ -412,7 +412,7 @@ export default function Home() {
 
       <aside className="brand-disclaimer" aria-label="Información de la tienda">
         <strong>Tienda independiente</strong>
-        <span>Comercializamos productos originales de marcas seleccionadas. No somos el sitio oficial de Natura ni de Avon.</span>
+        <span>Comercializamos productos originales de marcas seleccionadas. No somos el sitio oficial de Natura.</span>
       </aside>
       <div className="shipping-notice">Maldonado y Punta del Este: entrega en hasta 48 h · Interior: despachamos en hasta 48 h por UES o Correo Uruguayo</div>
 
@@ -515,7 +515,7 @@ export default function Home() {
         <div><strong>ayuda</strong><a href="#inicio">Preguntas frecuentes</a><a href="#inicio">Envíos y entregas</a><a href="#inicio">Cambios y devoluciones</a><a href="#inicio">Contacto</a></div>
         <div><strong>boutique del este</strong><a href="#inicio">Nuestra selección</a><a href="#productos">Marcas y productos</a><a href="https://wa.me/59892143420">Asesoramiento</a><a href="#inicio">Cómo comprar</a></div>
         <div className="country"><span>Uruguay · UYU</span><small>Maldonado y Punta del Este</small></div>
-        <p className="legal">Boutique del Este es una tienda independiente y no es el sitio oficial de Natura ni de Avon. Las marcas y líneas publicadas pertenecen a sus respectivos titulares. Disponibilidad sujeta a confirmación.</p>
+        <p className="legal">Boutique del Este es una tienda independiente y no es el sitio oficial de Natura. Las marcas y líneas publicadas pertenecen a sus respectivos titulares. Disponibilidad sujeta a confirmación.</p>
         <CatalogUpdateStatus />
       </footer>
 
