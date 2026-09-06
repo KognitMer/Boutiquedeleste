@@ -10,6 +10,7 @@ const REQUEST_GAP_MS = 400;
 const RATE_LIMIT_COOLDOWN_MS = 45_000;
 const MIN_SUCCESS_RATIO = 0.85;
 const DRY_RUN = process.argv.includes('--dry-run');
+const AUDIT = process.argv.includes('--audit');
 const limitArgument = process.argv.find((argument) =>
   argument.startsWith('--limit='),
 );
@@ -177,7 +178,9 @@ function extractPrice(html, sku) {
         : [schema.offers];
 
       const normalPrice = findNormalPrice(schema);
-      if (normalPrice !== null) return normalPrice;
+      if (normalPrice !== null) {
+        return { price: normalPrice, source: 'normal-price' };
+      }
 
       const hasPriceSpecifications = [
         schema.priceSpecification,
@@ -187,7 +190,9 @@ function extractPrice(html, sku) {
 
       for (const offer of offers) {
         const price = Number(offer?.price ?? offer?.lowPrice);
-        if (Number.isFinite(price) && price > 0 && price < 10_000) return price;
+        if (Number.isFinite(price) && price > 0 && price < 10_000) {
+          return { price, source: 'offer-price-fallback' };
+        }
       }
     } catch {
       // Algunas fichas incluyen otros bloques JSON-LD; se ignoran si son inválidos.
@@ -296,8 +301,8 @@ let completed = 0;
 const results = await mapConcurrent(products, async (product) => {
   try {
     const brlPrice = await fetchBrazilPrice(product.sku);
-    const uyuPrice = Math.round(brlPrice * BRL_TO_UYU_RATE);
-    return { product, brlPrice, uyuPrice };
+    const uyuPrice = Math.round(brlPrice.price * BRL_TO_UYU_RATE);
+    return { product, brlPrice: brlPrice.price, priceSource: brlPrice.source, uyuPrice };
   } catch (error) {
     return {
       product,
@@ -315,7 +320,22 @@ const successful = results.filter((result) => !result.error);
 const failed = results.filter((result) => result.error);
 const successRatio = successful.length / products.length;
 
-if (successRatio < MIN_SUCCESS_RATIO) {
+if (AUDIT) {
+  console.log('\nAuditoría de fuentes de precio:');
+  for (const result of successful) {
+    console.log(
+      `${result.priceSource === 'normal-price' ? 'OK' : 'REVISAR'} | SKU ${result.product.sku} | ${result.product.name} | fuente: ${result.priceSource} | $U ${result.uyuPrice}`,
+    );
+  }
+  for (const result of failed) {
+    console.log(`ERROR | SKU ${result.product.sku} | ${result.product.name} | ${result.error}`);
+  }
+  console.log(
+    `\nResultado: ${successful.filter((result) => result.priceSource === 'normal-price').length} con precio normal identificado, ${successful.filter((result) => result.priceSource !== 'normal-price').length} para revisar y ${failed.length} con error.`,
+  );
+}
+
+if (!AUDIT && successRatio < MIN_SUCCESS_RATIO) {
   console.error(
     `Actualización cancelada: solo respondieron ${successful.length}/${products.length} fichas.`,
   );
@@ -323,7 +343,7 @@ if (successRatio < MIN_SUCCESS_RATIO) {
     console.error(`- SKU ${result.product.sku}: ${result.error}`);
   }
   process.exitCode = 1;
-} else {
+} else if (!AUDIT) {
   const changed = successful.filter(
     ({ product, uyuPrice }) => product.price !== uyuPrice,
   );
