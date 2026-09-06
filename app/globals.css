@@ -43,7 +43,7 @@ a { color: inherit; text-decoration: none; }
 .brand-disclaimer strong { padding: 5px 9px; border-radius: 99px; background: var(--orange); color: var(--ink); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .hero { height: clamp(410px, 41vw, 590px); min-height: 410px; position: relative; overflow: hidden; background: #cc7f64; }
 .hero > img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.catalog-hero { background: radial-gradient(circle at 78% 38%, #fff8df 0%, #f7e7ae 42%, #edd9a2 74%, #dfc98e 100%); }
+.catalog-hero { background: #f7ead0 url('/og.png') center / cover no-repeat; }
 .catalog-hero:before { content: ''; position: absolute; width: 48vw; height: 48vw; min-width: 520px; min-height: 520px; right: -11vw; top: -19vw; border: 1px solid #24231d35; border-radius: 50%; }
 .catalog-hero > img { width: 46%; margin-left: auto; object-fit: contain; object-position: center; mix-blend-mode: normal; filter: drop-shadow(0 26px 30px #6b4b0040); }
 .hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, #f7d553 0%, #f7d553d9 43%, transparent 72%); }
