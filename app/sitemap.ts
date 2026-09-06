@@ -8,6 +8,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: SITE_URL, lastModified, changeFrequency: 'daily', priority: 1 },
+    ...['terminos-y-condiciones', 'politica-de-privacidad', 'cambios-y-devoluciones', 'envios-y-entregas'].map((slug) => ({
+      url: `${SITE_URL}/${slug}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
     ...categories.map((category) => ({
       url: `${SITE_URL}/categoria/${category.slug}`,
       lastModified,
