@@ -416,7 +416,6 @@ export default function Home() {
       </aside>
 
       <section id="inicio" className="hero catalog-hero" aria-label="Selección de belleza de Boutique del Este">
-        <img src="/catalog/kaiak-21k.webp" alt="Perfume Kaiak disponible en Boutique del Este" />
         <div className="hero-scrim" />
         <div className="hero-copy">
           <p>perfumería y cuidado personal · Uruguay</p>
