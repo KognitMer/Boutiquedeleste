@@ -86,7 +86,7 @@ async function mercadoPagoRequest(path: string, init?: RequestInit) {
   return payload;
 }
 
-export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], payerEmail: string) {
+export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], _payerEmail: string) {
   const productItems = buildOrderItems(itemsInput);
   const subtotal = productItems.reduce((total, item) => total + Number(item.total_amount), 0);
   const surcharge = mercadoPagoSurcharge(subtotal);
@@ -103,14 +103,12 @@ export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], pa
   const totalAmount = (subtotal + surcharge).toFixed(2);
   const siteUrl = getSiteUrl();
   const externalReference = `BDE-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
-  const isTestCheckout = getAccessToken().startsWith('TEST-');
 
   const preference = await mercadoPagoRequest('/checkout/preferences', {
     method: 'POST',
     headers: { 'X-Idempotency-Key': crypto.randomUUID() },
     body: JSON.stringify({
       external_reference: externalReference,
-      ...(!isTestCheckout && { payer: { email: payerEmail } }),
       items: items.map((item) => ({
         title: item.title,
         quantity: item.quantity,
