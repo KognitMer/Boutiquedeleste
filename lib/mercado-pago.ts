@@ -127,9 +127,7 @@ export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], pa
     }),
   });
 
-  const checkoutUrl = getAccessToken().startsWith('TEST-')
-    ? preference.sandbox_init_point
-    : preference.init_point;
+  const checkoutUrl = preference.init_point;
   if (!checkoutUrl) throw new MercadoPagoError('Mercado Pago no devolvió un enlace de pago.', 502);
   return { ...preference, checkout_url: checkoutUrl, total_amount: totalAmount };
 }
