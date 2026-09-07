@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import { NextResponse } from 'next/server';
-import { getMercadoPagoOrder } from '@/lib/mercado-pago';
+import { getMercadoPagoPayment } from '@/lib/mercado-pago';
 
 export const runtime = 'nodejs';
 
@@ -30,11 +30,11 @@ export async function POST(request: Request) {
   }
 
   try {
-    // Consultar la order evita confiar en el contenido del webhook para tomar decisiones comerciales.
-    await getMercadoPagoOrder(dataId);
+    // Consultar el pago evita confiar en el contenido del webhook para tomar decisiones comerciales.
+    await getMercadoPagoPayment(dataId);
     return NextResponse.json({ received: true });
   } catch {
-    // Una firma válida debe recibir 200 para evitar reintentos infinitos; la order puede consultarse luego.
+    // Una firma válida debe recibir 200 para evitar reintentos infinitos; el pago puede consultarse luego.
     return NextResponse.json({ received: true });
   }
 }

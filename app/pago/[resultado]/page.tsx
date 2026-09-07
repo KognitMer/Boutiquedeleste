@@ -1,5 +1,5 @@
 import { ClearPaidCart } from '@/components/clear-paid-cart';
-import { getMercadoPagoOrder } from '@/lib/mercado-pago';
+import { getMercadoPagoPayment } from '@/lib/mercado-pago';
 import Link from 'next/link';
 
 type PaymentPageProps = {
@@ -41,36 +41,36 @@ function first(value: string | string[] | undefined) {
 }
 
 function verifiedResult(status?: string, detail?: string): ResultType {
-  if (status === 'processed' && detail === 'accredited') return 'aprobado';
-  if (status === 'failed' || status === 'canceled') return 'rechazado';
-  if (status === 'created' || status === 'processing' || status === 'action_required') return 'pendiente';
+  if (status === 'approved' && detail === 'accredited') return 'aprobado';
+  if (status === 'rejected' || status === 'cancelled' || status === 'refunded') return 'rechazado';
+  if (status === 'pending' || status === 'in_process' || status === 'authorized') return 'pendiente';
   return 'desconocido';
 }
 
 export default async function PaymentResultPage({ params, searchParams }: PaymentPageProps) {
   const routeResult = (await params).resultado;
   const query = await searchParams;
-  const orderId = first(query.order_id);
+  const paymentId = first(query.payment_id) || first(query.collection_id);
   let result: ResultType = 'desconocido';
   let reference = first(query.external_reference) || '';
   let amount = '';
 
-  if (orderId) {
+  if (paymentId) {
     try {
-      const order = await getMercadoPagoOrder(orderId);
-      result = verifiedResult(order.status, order.status_detail);
-      reference = order.external_reference || reference;
-      amount = order.total_amount || '';
+      const payment = await getMercadoPagoPayment(paymentId);
+      result = verifiedResult(payment.status, payment.status_detail);
+      reference = payment.external_reference || reference;
+      amount = payment.transaction_amount ? String(payment.transaction_amount) : '';
     } catch {
       result = 'desconocido';
     }
   }
 
   // La ruta solo se usa como orientación visual; el estado real proviene de la API autenticada.
-  if (!orderId && ['aprobado', 'pendiente', 'rechazado'].includes(routeResult)) result = 'desconocido';
+  if (!paymentId && ['aprobado', 'pendiente', 'rechazado'].includes(routeResult)) result = 'desconocido';
 
   const content = resultContent[result];
-  const message = `Hola, consulto por mi pago de Boutique del Este${reference ? `, referencia ${reference}` : ''}${orderId ? `, orden ${orderId}` : ''}.`;
+  const message = `Hola, consulto por mi pago de Boutique del Este${reference ? `, referencia ${reference}` : ''}${paymentId ? `, pago ${paymentId}` : ''}.`;
   const whatsappUrl = `https://wa.me/59892143420?text=${encodeURIComponent(message)}`;
 
   return (
@@ -82,9 +82,9 @@ export default async function PaymentResultPage({ params, searchParams }: Paymen
         <p>{content.eyebrow}</p>
         <h1>{content.title}</h1>
         <div>{content.description}</div>
-        {(reference || orderId || amount) && <dl>
+        {(reference || paymentId || amount) && <dl>
           {reference && <><dt>Referencia</dt><dd>{reference}</dd></>}
-          {orderId && <><dt>Orden Mercado Pago</dt><dd>{orderId}</dd></>}
+          {paymentId && <><dt>Pago Mercado Pago</dt><dd>{paymentId}</dd></>}
           {amount && <><dt>Total</dt><dd>$ {Number(amount).toLocaleString('es-UY')} UYU</dd></>}
         </dl>}
         <div className="payment-result-actions">

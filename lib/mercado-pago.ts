@@ -8,14 +8,14 @@ export type CheckoutItemInput = {
   quantity: number;
 };
 
-type MercadoPagoOrder = {
-  id: string;
-  status: string;
-  status_detail: string;
-  checkout_url?: string;
+type MercadoPagoResource = {
+  id: string | number;
+  status?: string;
+  status_detail?: string;
+  init_point?: string;
+  sandbox_init_point?: string;
   external_reference?: string;
-  total_amount?: string;
-  items?: Array<{ title: string; quantity: number; unit_price: string; total_amount: string }>;
+  transaction_amount?: number;
 };
 
 export class MercadoPagoError extends Error {
@@ -78,7 +78,7 @@ async function mercadoPagoRequest(path: string, init?: RequestInit) {
     cache: 'no-store',
   });
 
-  const payload = await response.json().catch(() => null) as (MercadoPagoOrder & { message?: string }) | null;
+  const payload = await response.json().catch(() => null) as (MercadoPagoResource & { message?: string }) | null;
   if (!response.ok || !payload) {
     const message = payload?.message || 'Mercado Pago no pudo procesar la solicitud.';
     throw new MercadoPagoError(message, response.status >= 400 && response.status < 500 ? 400 : 502);
@@ -104,35 +104,37 @@ export async function createMercadoPagoOrder(itemsInput: CheckoutItemInput[], pa
   const siteUrl = getSiteUrl();
   const externalReference = `BDE-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
 
-  const order = await mercadoPagoRequest('/v1/orders', {
+  const preference = await mercadoPagoRequest('/checkout/preferences', {
     method: 'POST',
     headers: { 'X-Idempotency-Key': crypto.randomUUID() },
     body: JSON.stringify({
-      type: 'online',
-      processing_mode: 'manual',
-      capture_mode: 'automatic_async',
-      total_amount: totalAmount,
       external_reference: externalReference,
-      description: 'Pedido Boutique del Este',
       payer: { email: payerEmail },
-      items,
-      config: {
-        notification_url: `${siteUrl}/api/mercado-pago/webhook`,
-        online: {
-          success_url: `${siteUrl}/pago/aprobado`,
-          failure_url: `${siteUrl}/pago/rechazado`,
-          pending_url: `${siteUrl}/pago/pendiente`,
-          auto_return: 'all',
-        },
+      items: items.map((item) => ({
+        title: item.title,
+        quantity: item.quantity,
+        unit_price: Number(item.unit_price),
+        currency_id: 'UYU',
+      })),
+      back_urls: {
+        success: `${siteUrl}/pago/aprobado`,
+        failure: `${siteUrl}/pago/rechazado`,
+        pending: `${siteUrl}/pago/pendiente`,
       },
+      auto_return: 'approved',
+      notification_url: `${siteUrl}/api/mercado-pago/webhook`,
+      statement_descriptor: 'BOUTIQUE DEL ESTE',
     }),
   });
 
-  if (!order.checkout_url) throw new MercadoPagoError('Mercado Pago no devolvió un enlace de pago.', 502);
-  return order;
+  const checkoutUrl = getAccessToken().startsWith('TEST-')
+    ? preference.sandbox_init_point
+    : preference.init_point;
+  if (!checkoutUrl) throw new MercadoPagoError('Mercado Pago no devolvió un enlace de pago.', 502);
+  return { ...preference, checkout_url: checkoutUrl, total_amount: totalAmount };
 }
 
-export async function getMercadoPagoOrder(orderId: string) {
-  if (!/^ORD[A-Za-z0-9_-]+$/.test(orderId)) throw new MercadoPagoError('Identificador de pago inválido.', 400);
-  return mercadoPagoRequest(`/v1/orders/${encodeURIComponent(orderId)}`);
+export async function getMercadoPagoPayment(paymentId: string) {
+  if (!/^\d+$/.test(paymentId)) throw new MercadoPagoError('Identificador de pago inválido.', 400);
+  return mercadoPagoRequest(`/v1/payments/${encodeURIComponent(paymentId)}`);
 }

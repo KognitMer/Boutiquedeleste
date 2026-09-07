@@ -29,8 +29,12 @@ export async function POST(request: Request) {
       items,
       paymentMethod: 'mercado-pago',
       surcharge: mercadoPagoSurcharge(subtotal),
+    }).catch(() => null);
+    return NextResponse.json({
+      checkoutUrl: order.checkout_url,
+      preferenceId: String(order.id),
+      orderNumber: purchaseOrder?.number,
     });
-    return NextResponse.json({ checkoutUrl: order.checkout_url, orderId: order.id, orderNumber: purchaseOrder.number });
   } catch (error) {
     const status = error instanceof MercadoPagoError || error instanceof OrderReceiptError ? error.status : 500;
     const message = error instanceof MercadoPagoError || error instanceof OrderReceiptError ? error.message : 'No pudimos iniciar el pago. Intentá nuevamente.';
