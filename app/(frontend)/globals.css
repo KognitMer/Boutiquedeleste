@@ -119,8 +119,8 @@ a { color: inherit; text-decoration: none; }
 .products-section { padding-top: 70px; padding-bottom: 75px; border-top: 1px solid var(--line); }
 .products-heading { align-items: center; }
 .filter-pills { display: flex; gap: 7px; padding: 4px; background: #f2eee8; border-radius: 24px; }
-.filter-pills button { border: 0; border-radius: 19px; background: transparent; padding: 9px 13px; color: var(--muted); font-size: 10px; cursor: pointer; }
-.filter-pills button.active { background: white; color: var(--ink); box-shadow: 0 2px 7px #33201613; font-weight: 700; }
+.filter-pills button, .filter-pills a { border: 0; border-radius: 19px; background: transparent; padding: 9px 13px; color: var(--muted); font-size: 10px; cursor: pointer; }
+.filter-pills button.active, .filter-pills a.active { background: white; color: var(--ink); box-shadow: 0 2px 7px #33201613; font-weight: 700; }
 .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .product-card { min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; transition: .2s; }
 .product-card:hover { transform: translateY(-3px); box-shadow: 0 15px 35px #3d2d2314; }

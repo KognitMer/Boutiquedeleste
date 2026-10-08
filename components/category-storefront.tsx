@@ -10,6 +10,7 @@ import type { StoreCategory, StoreProduct } from '@/lib/products';
 
 type Props = {
   category: StoreCategory;
+  subcategories: StoreCategory[];
   otherCategories: StoreCategory[];
   products: StoreProduct[];
   total: number;
@@ -17,11 +18,13 @@ type Props = {
   totalPages: number;
 };
 
-export function CategoryStorefront({ category, otherCategories, products, total, page, totalPages }: Props) {
+export function CategoryStorefront({ category, subcategories, otherCategories, products, total, page, totalPages }: Props) {
   return <main>
     <StoreHeader />
     <div className="breadcrumbs section-shell">
-      <Link href="/">Inicio</Link><span>›</span><strong>{category.name}</strong>
+      <Link href="/">Inicio</Link><span>›</span>
+      {category.parent && <><Link href={`/categoria/${category.parent.slug}`}>{category.parent.name}</Link><span>›</span></>}
+      <strong>{category.name}</strong>
     </div>
 
     <section className={`category-hero ${category.tone}`}>
@@ -34,8 +37,9 @@ export function CategoryStorefront({ category, otherCategories, products, total,
     </section>
 
     <section className="products-section section-shell category-products">
-      <div className="section-heading">
+      <div className="section-heading products-heading">
         <div><p>{total} productos</p><h2>Catálogo {category.name}</h2></div>
+        {subcategories.length > 0 && <SubcategoryPills category={category} subcategories={subcategories} />}
       </div>
       {products.length ? <>
         <div className="product-grid">
@@ -73,4 +77,28 @@ export function CategoryStorefront({ category, otherCategories, products, total,
 
     <StoreFooter />
   </main>;
+}
+
+/** Enlaces entre la categoría principal y sus subcategorías. */
+function SubcategoryPills({ category, subcategories }: { category: StoreCategory; subcategories: StoreCategory[] }) {
+  const main = category.parent ?? category;
+  const items = [{ slug: main.slug, name: 'Todo' }, ...subcategories];
+
+  return (
+    <nav className="filter-pills" aria-label={`Subcategorías de ${main.name}`}>
+      {items.map((item) => {
+        const current = item.slug === category.slug;
+        return (
+          <Link
+            key={item.slug}
+            className={current ? 'active' : ''}
+            href={`/categoria/${item.slug}`}
+            aria-current={current ? 'page' : undefined}
+          >
+            {item.name}
+          </Link>
+        );
+      })}
+    </nav>
+  );
 }
