@@ -51,7 +51,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   const page = Math.max(1, Number(pagina) || 1);
   const [{ products, total, totalPages }, categories] = await Promise.all([
     listProducts({ categorySlug: slug, page }),
-    getCategories(),
+    getCategories({ topLevelOnly: true }),
   ]);
 
   return (
