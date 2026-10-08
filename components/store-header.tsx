@@ -4,25 +4,17 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Heart, Menu, MessageCircle, Search, ShoppingBag, X } from 'lucide-react';
 import { AccountButton } from '@/components/account-button';
+import { useNavCategories } from '@/components/nav-categories';
 import { useStore } from '@/components/store-provider';
-
-const navItems = [
-  ['promociones', '/#productos'],
-  ['perfumería', '/categoria/perfumeria'],
-  ['cuerpo y baño', '/categoria/cuerpo-y-bano'],
-  ['cabello', '/categoria/cabello'],
-  ['rostro', '/categoria/rostro'],
-  ['maquillaje', '/categoria/maquillaje'],
-  ['infantil', '/categoria/infantil'],
-  ['luz roja', '/categoria/luz-roja'],
-  ['hogar', '/categoria/hogar'],
-  ['regalos', '/categoria/regalos'],
-];
 
 export function StoreHeader() {
   const [query, setQuery] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartCount, openCart, showNotice } = useStore();
+  const navItems = [
+    ['promociones', '/#productos'],
+    ...useNavCategories().map((category) => [category.name.toLowerCase(), `/categoria/${category.slug}`]),
+  ];
 
   function submitSearch() {
     const search = query.trim();
